@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "name": "Ironworkers Local 63 Training Center",
+    "city": "Chicago",
+    "state": "IL",
+    "region": "Midwest",
+    "address": "195 N. Dearborn St., Chicago, IL 60601",
+    "phone": "(312) 372-2828",
+    "courses": ["CLT Panel Installation", "Glulam Erection", "Safety Fundamentals"],
+    "status": "Active"
+  },
+  {
+    "id": "2",
+    "name": "Pacific Northwest Ironworkers Training Center",
+    "city": "Seattle",
+    "state": "WA",
+    "region": "West",
+    "address": "4550 S. 134th Pl., Seattle, WA 98168",
+    "phone": "(206) 248-4246",
+    "courses": ["CLT Panel Installation", "Glulam Erection", "Crane & Rigging", "Advanced Specialist"],
+    "status": "Active"
+  },
+  {
+    "id": "3",
+    "name": "Ironworkers Local 580 Training Facility",
+    "city": "New York",
+    "state": "NY",
+    "region": "Northeast",
+    "address": "501 West 42nd Street, New York, NY 10036",
+    "phone": "(212) 594-0328",
+    "courses": ["Mass Timber Fundamentals", "Steel-to-Timber Connections", "Blueprint Reading"],
+    "status": "Active"
+  },
+  {
+    "id": "4",
+    "name": "Southern California Mass Timber Lab",
+    "city": "Los Angeles",
+    "state": "CA",
+    "region": "West",
+    "address": "2121 E. Olympic Blvd., Los Angeles, CA 90021",
+    "phone": "(213) 239-0171",
+    "courses": ["CLT Panel Installation", "Hybrid Connection Systems", "Fall Protection"],
+    "status": "Active"
+  },
+  {
+    "id": "5",
+    "name": "Ontario Ironworkers Training Centre",
+    "city": "Toronto",
+    "state": "ON",
+    "region": "Canada",
+    "address": "60 Enterprise Blvd., Toronto, ON M8Z 4A4",
+    "phone": "(416) 252-5411",
+    "courses": ["Mass Timber Fundamentals", "Glulam Erection", "Crane & Rigging"],
+    "status": "Active"
+  },
+  {
+    "id": "6",
+    "name": "Texas Mass Timber Training Facility",
+    "city": "Houston",
+    "state": "TX",
+    "region": "South",
+    "address": "1710 Commerce St., Houston, TX 77003",
+    "phone": "(713) 227-6181",
+    "courses": ["CLT Panel Installation", "Safety Fundamentals", "Structural Assembly"],
+    "status": "Active"
+  },
+  {
+    "id": "7",
+    "name": "Saskatchewan Provincial Training Center",
+    "city": "Regina",
+    "state": "SK",
+    "region": "Canada",
+    "address": "1450 Winnipeg St., Regina, SK S4R 1J3",
+    "phone": "(306) 522-7932",
+    "courses": ["Mass Timber Fundamentals", "CLT Panel Installation", "Cold Weather Erection"],
+    "status": "Active"
+  },
+  {
+    "id": "8",
+    "name": "Ironworkers Local 25 Training Center",
+    "city": "Detroit",
+    "state": "MI",
+    "region": "Midwest",
+    "address": "25225 Ecorse Rd., Taylor, MI 48180",
+    "phone": "(313) 292-2727",
+    "courses": ["Mass Timber Fundamentals", "Welding Certification", "Reinforcing Systems"],
+    "status": "Active"
+  }
+]

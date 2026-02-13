@@ -1,0 +1,26 @@
+[
+  { "label": "Home", "href": "/" },
+  {
+    "label": "About Us",
+    "href": "/about",
+    "children": [
+      { "label": "Our Union", "href": "/about" },
+      { "label": "Leadership Team", "href": "/about/leadership" }
+    ]
+  },
+  {
+    "label": "Training",
+    "href": "/training",
+    "children": [
+      { "label": "About Training", "href": "/training/about" },
+      { "label": "Find a Training Center", "href": "/training/centers" },
+      { "label": "For Contractors", "href": "/training/contractors" },
+      { "label": "For Members", "href": "/training/members" }
+    ]
+  },
+  { "label": "Projects", "href": "/projects" },
+  { "label": "Contractors", "href": "/contractors" },
+  { "label": "Suppliers & Manufacturers", "href": "/suppliers" },
+  { "label": "Partners", "href": "https://www.woodworksinnovationnetwork.org/", "external": true },
+  { "label": "Contact", "href": "/contact" }
+]

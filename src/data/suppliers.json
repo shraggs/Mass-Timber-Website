@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "name": "Vaagen Timbers",
+    "slug": "vaagen-timbers",
+    "location": "Colville, WA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/connector-detail.png"
+  },
+  {
+    "id": "2",
+    "name": "Mercer Mass Timber",
+    "slug": "mercer-mass-timber",
+    "location": "Vancouver, British Columbia, Canada",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/timber-beams-wide.png"
+  },
+  {
+    "id": "3",
+    "name": "Simpson Strong-Tie",
+    "slug": "simpson-strong-tie",
+    "location": "Pleasanton, CA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/workers-installing.png"
+  },
+  {
+    "id": "4",
+    "name": "Boise Cascade",
+    "slug": "boise-cascade",
+    "location": "Boise, ID, USA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/timber-ceiling.png"
+  }
+]

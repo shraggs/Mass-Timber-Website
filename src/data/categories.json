@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "name": "Commercial",
+    "slug": "commercial",
+    "projectCount": 6,
+    "image": "/images/timber-beams-wide.png"
+  },
+  {
+    "id": "2",
+    "name": "Industrial",
+    "slug": "industrial",
+    "projectCount": 5,
+    "image": "/images/construction-wide.png"
+  },
+  {
+    "id": "3",
+    "name": "Low-Rise",
+    "slug": "low-rise",
+    "projectCount": 5,
+    "image": "/images/panoramic-beams.png"
+  },
+  {
+    "id": "4",
+    "name": "Education",
+    "slug": "education",
+    "projectCount": 7,
+    "image": "/images/clean-interior.png"
+  },
+  {
+    "id": "5",
+    "name": "Civic/Recreational",
+    "slug": "civic-recreational",
+    "projectCount": 6,
+    "image": "/images/hero-interior.png"
+  }
+]

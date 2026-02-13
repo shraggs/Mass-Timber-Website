@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "city": "Los Angeles",
+    "state": "California",
+    "country": "USA",
+    "postCode": "91721",
+    "image": "/images/rotated-contact.jpeg"
+  },
+  {
+    "id": "2",
+    "city": "San Jose",
+    "state": "California",
+    "country": "USA",
+    "postCode": "10021",
+    "image": "/images/rotated-site-1.jpg"
+  },
+  {
+    "id": "3",
+    "city": "Iowa City",
+    "state": "Iowa",
+    "country": "USA",
+    "postCode": "14235",
+    "image": "/images/rotated-site-2.jpg"
+  },
+  {
+    "id": "4",
+    "city": "Regina",
+    "state": "SK",
+    "country": "Canada",
+    "postCode": "14235",
+    "image": "/images/rotated-site-3.jpg"
+  }
+]

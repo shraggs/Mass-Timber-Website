@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "name": "Arcola Community School",
+    "slug": "arcola-community-school",
+    "location": "Regina, SK",
+    "category": "Education",
+    "image": "/images/construction-wide.png"
+  },
+  {
+    "id": "2",
+    "name": "269 A Street",
+    "slug": "269-a-street",
+    "location": "Boston, MA",
+    "category": "Commercial",
+    "image": "/images/timber-beams-wide.png"
+  },
+  {
+    "id": "3",
+    "name": "Goldfinch Lofts",
+    "slug": "goldfinch-lofts",
+    "location": "Des Moines, IA",
+    "category": "Low Rise",
+    "image": "/images/panoramic-beams.png"
+  },
+  {
+    "id": "4",
+    "name": "355 Sango Court",
+    "slug": "355-sango-court",
+    "location": "Milpitas, CA",
+    "category": "Commercial",
+    "image": "/images/clean-interior.png"
+  },
+  {
+    "id": "5",
+    "name": "Community Ice Stadium / Mighty Ducks Practice Facility",
+    "slug": "community-ice-stadium",
+    "location": "Anaheim, CA",
+    "category": "Civic Recreational",
+    "image": "/images/hero-interior.png"
+  },
+  {
+    "id": "6",
+    "name": "The Preserve LA",
+    "slug": "the-preserve-la",
+    "location": "Los Angeles, CA",
+    "category": "Commercial",
+    "image": "/images/timber-ceiling.png"
+  },
+  {
+    "id": "7",
+    "name": "Bungalows on Marathon Street",
+    "slug": "bungalows-marathon",
+    "location": "Los Angeles, CA",
+    "category": "Low Rise",
+    "image": "/images/about-hero.jpg"
+  },
+  {
+    "id": "8",
+    "name": "843 North Spring Street",
+    "slug": "843-north-spring",
+    "location": "Los Angeles, California",
+    "category": "Commercial",
+    "image": "/images/timber-frame-wide.jpg"
+  },
+  {
+    "id": "9",
+    "name": "University of Washington Tacoma Milgard Hall",
+    "slug": "uw-tacoma-milgard",
+    "location": "Tacoma, WA",
+    "category": "Education",
+    "image": "/images/workers-installing.png"
+  },
+  {
+    "id": "10",
+    "name": "Hilltop Heritage Elementary School (ES No. 16)",
+    "slug": "hilltop-heritage",
+    "location": "Renton, WA",
+    "category": "Education",
+    "image": "/images/site-overview.jpg"
+  },
+  {
+    "id": "11",
+    "name": "National Nordic Museum",
+    "slug": "national-nordic-museum",
+    "location": "Seattle, WA",
+    "category": "Civic Recreational",
+    "image": "/images/connector-detail.png"
+  }
+]
