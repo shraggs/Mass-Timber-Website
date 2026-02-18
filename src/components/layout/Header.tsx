@@ -10,6 +10,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE, SOCIAL_LINKS } from '@/lib/constants';
 import { MobileMenu } from './MobileMenu';
 
 const navItems = [
+  { label: 'Home', href: '/' },
   {
     label: 'About Us',
     href: '/about',
@@ -111,9 +112,9 @@ export function Header() {
           boxShadow: headerShadow,
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="px-4 sm:px-8 lg:px-12">
           <motion.div className="flex items-center" style={{ height: headerHeight }}>
-            {/* Logo with scale on scroll */}
+            {/* Logo on far left */}
             <Link href="/" className="flex-shrink-0 flex items-center group">
               <motion.div style={{ scale: logoScale, transformOrigin: 'left center' }}>
                 <Image
