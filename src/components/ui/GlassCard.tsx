@@ -34,7 +34,7 @@ export function GlassCard({ children, variant = 'light', hover = false, padding 
         whileHover={{
           y: -6,
           scale: 1.02,
-          boxShadow: '0 8px 32px rgba(229, 168, 32, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
+          boxShadow: '0 8px 32px rgba(52, 173, 119, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
         }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       >

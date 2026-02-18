@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-amber-400: #E5A820;
-  --color-amber-500: #C98A0C;
-  --color-amber-600: #A66D08;
+  --color-amber-400: #45D48A;
+  --color-amber-500: #34AD77;
+  --color-amber-600: #2B9166;
   --color-forest-500: #2D7A3C;
   --color-forest-600: #1F5E2A;
   --color-charcoal-900: #252520;
@@ -104,12 +104,12 @@ body {
     transition: all 0.3s ease;
   }
   .glass-hover-glow:hover {
-    box-shadow: 0 8px 32px rgba(229, 168, 32, 0.15), var(--inner-highlight);
+    box-shadow: 0 8px 32px rgba(52, 173, 119, 0.15), var(--inner-highlight);
     transform: translateY(-2px);
   }
 
   .gradient-orb-amber {
-    background: radial-gradient(circle, rgba(229, 168, 32, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(52, 173, 119, 0.3) 0%, transparent 70%);
   }
 
   .gradient-orb-forest {
@@ -128,14 +128,14 @@ body {
   /* Gradient mesh backgrounds */
   .gradient-mesh {
     background:
-      radial-gradient(at 20% 30%, rgba(229, 168, 32, 0.06) 0%, transparent 50%),
+      radial-gradient(at 20% 30%, rgba(52, 173, 119, 0.06) 0%, transparent 50%),
       radial-gradient(at 80% 70%, rgba(45, 122, 60, 0.04) 0%, transparent 50%),
       radial-gradient(at 50% 50%, rgba(253, 252, 248, 1) 0%, rgba(250, 249, 244, 1) 100%);
   }
 
   .gradient-mesh-dark {
     background:
-      radial-gradient(at 20% 30%, rgba(229, 168, 32, 0.08) 0%, transparent 50%),
+      radial-gradient(at 20% 30%, rgba(52, 173, 119, 0.08) 0%, transparent 50%),
       radial-gradient(at 80% 70%, rgba(45, 122, 60, 0.06) 0%, transparent 50%),
       radial-gradient(at 50% 50%, rgba(26, 26, 23, 1) 0%, rgba(37, 37, 32, 1) 100%);
   }
