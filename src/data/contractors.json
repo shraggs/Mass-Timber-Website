@@ -17,9 +17,9 @@
   },
   {
     "id": "2",
-    "name": "Faust Fab",
-    "slug": "faust-fab",
-    "description": "Union Steel and Mass Timber Erection Company",
+    "name": "FOUST Fabrication & Erectors",
+    "slug": "foust-fabrication-erectors",
+    "description": "Union Steel and Mass Timber Erection Company. Erected the largest mass timber project in North America — Walmart Home Office Campus (1.2M sqft, 78,426 ironworker hours). IMPACT Project of the Year Winner.",
     "address": "Orin-Rice Road, Rice, Washington, 99167",
     "phone": "(509) 684-3754",
     "rating": 5,
@@ -270,5 +270,21 @@
     "location": "California",
     "lat": 34.181,
     "lng": -118.309
+  },
+  {
+    "id": "18",
+    "name": "Hodges Erectors, Inc.",
+    "slug": "hodges-erectors",
+    "description": "Built Miami's first hybrid steel/mass timber commercial building — Apple Miami World Center. IMPACT Project of the Year Nominee.",
+    "address": "Miami, Florida",
+    "phone": "",
+    "rating": 5,
+    "reviewCount": 1,
+    "badges": ["featured"],
+    "image": "/images/projects/apple-miami/Apple 1.jpg",
+    "categories": ["Mass Timber"],
+    "location": "Florida",
+    "lat": 25.781,
+    "lng": -80.190
   }
 ]

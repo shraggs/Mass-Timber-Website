@@ -17,7 +17,7 @@ const tabs = [
 ];
 
 const categories = ['Civic Recreational', 'Commercial', 'Education', 'Industrial', 'Low Rise', 'Mass Timber'];
-const locations = ['Anaheim', 'Boston', 'California', 'Iowa', 'Las Vegas', 'Los Angeles', 'Milpitas', 'New York', 'Renton', 'Tacoma'];
+const locations = ['Anaheim', 'Bentonville', 'Boston', 'California', 'Iowa', 'Las Vegas', 'Los Angeles', 'Miami', 'Milpitas', 'New York', 'Renton', 'Tacoma'];
 
 export default function ProjectsPage() {
   const projects = projectsData as Project[];

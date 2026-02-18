@@ -2,6 +2,7 @@ import { HeroSection } from '@/components/sections/HeroSection';
 import { WhatIsMassTimber } from '@/components/sections/WhatIsMassTimber';
 import { StatsBar } from '@/components/sections/StatsBar';
 import { DirectoryPreview } from '@/components/sections/DirectoryPreview';
+import { FeaturedProjects } from '@/components/sections/FeaturedProjects';
 import { ProjectCategories } from '@/components/sections/ProjectCategories';
 import { ProcessTimeline } from '@/components/sections/ProcessTimeline';
 import { ComparisonSection } from '@/components/sections/ComparisonSection';
@@ -21,7 +22,9 @@ export default function Home() {
       <StatsBar />
       <SectionDivider variant="diagonal" fillColor="#FDFCF8" />
       <DirectoryPreview />
-      <SectionDivider variant="diagonal-reverse" fillColor="#1A1A17" />
+      <SectionDivider variant="diagonal-reverse" fillColor="#FDFCF8" />
+      <FeaturedProjects />
+      <SectionDivider variant="diagonal" fillColor="#1A1A17" />
       <ProjectCategories />
       <SectionDivider variant="wave" fillColor="#FDFCF8" />
       <ProcessTimeline />

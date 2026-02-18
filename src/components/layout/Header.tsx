@@ -42,8 +42,8 @@ export function Header() {
   const dropdownTimeoutRef = useState<NodeJS.Timeout | null>(null);
 
   const { scrollY } = useScroll();
-  const headerBg = useTransform(scrollY, [0, 100], ['rgba(26,26,23,0)', 'rgba(26,26,23,0.92)']);
-  const headerBlur = useTransform(scrollY, [0, 100], [0, 24]);
+  const headerBg = useTransform(scrollY, [0, 100], ['rgba(26,26,23,0.7)', 'rgba(26,26,23,0.95)']);
+  const headerBlur = useTransform(scrollY, [0, 100], [12, 24]);
   const headerShadow = useTransform(
     scrollY,
     [0, 100],

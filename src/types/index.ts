@@ -23,6 +23,19 @@ export interface Project {
   category: string;
   image?: string;
   description?: string;
+  owner?: string;
+  contractor?: string;
+  generalContractor?: string;
+  ironworkerHours?: number;
+  localUnion?: string;
+  sqft?: string;
+  award?: 'winner' | 'submitted' | null;
+  challenges?: string;
+  innovations?: string;
+  safety?: string;
+  scope?: string;
+  gallery?: string[];
+  featured?: boolean;
 }
 
 export interface Supplier {
