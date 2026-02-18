@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
+import { BackToTop } from "@/components/ui/BackToTop";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -33,11 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakartaSans.variable} ${inter.variable} antialiased`}>
+      <body className={`${plusJakartaSans.variable} ${inter.variable} antialiased grain-overlay`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
         <ChatWidget />
+        <BackToTop />
       </body>
     </html>
   );

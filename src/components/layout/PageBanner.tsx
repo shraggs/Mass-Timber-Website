@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { cn, isRotatedImage, getImageRotation } from '@/lib/utils';
 import { Container } from '@/components/ui/Container';
 import { Breadcrumb } from './Breadcrumb';
@@ -84,13 +85,42 @@ export function PageBanner({ title, subtitle, backgroundImage, images, breadcrum
         <StaticBackground src={backgroundImage} alt={title} />
       )}
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal-950/85 via-charcoal-950/60 to-charcoal-950/40 z-[2]" />
+
+      {/* Grain overlay */}
+      <div
+        className="absolute inset-0 z-[3] pointer-events-none opacity-[0.03] mix-blend-overlay"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '256px 256px',
+        }}
+      />
+
       <Container className="relative z-10">
-        <Breadcrumb items={breadcrumbs} dark />
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-cream font-[family-name:var(--font-jakarta)] mt-4">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Breadcrumb items={breadcrumbs} dark />
+        </motion.div>
+        <motion.h1
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-cream font-[family-name:var(--font-jakarta)] mt-4"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           {title}
-        </h1>
+        </motion.h1>
         {subtitle && (
-          <p className="text-cream/70 text-lg mt-3 max-w-xl">{subtitle}</p>
+          <motion.p
+            className="text-cream/70 text-lg mt-3 max-w-xl"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {subtitle}
+          </motion.p>
         )}
       </Container>
     </section>
