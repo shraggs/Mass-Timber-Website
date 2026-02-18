@@ -42,14 +42,15 @@ export function Header() {
   const dropdownTimeoutRef = useState<NodeJS.Timeout | null>(null);
 
   const { scrollY } = useScroll();
-  const headerBg = useTransform(scrollY, [0, 100], ['rgba(30,58,42,0.75)', 'rgba(30,58,42,0.95)']);
-  const headerBlur = useTransform(scrollY, [0, 100], [12, 24]);
+  const headerBg = useTransform(scrollY, [0, 100], ['rgba(30,58,42,1)', 'rgba(30,58,42,1)']);
+  const headerBlur = useTransform(scrollY, [0, 100], [0, 24]);
   const headerShadow = useTransform(
     scrollY,
     [0, 100],
     ['0 0 0 rgba(0,0,0,0)', '0 4px 30px rgba(0,0,0,0.3)']
   );
-  const logoScale = useTransform(scrollY, [0, 100], [1, 0.88]);
+  const logoScale = useTransform(scrollY, [0, 100], [1.35, 0.9]);
+  const headerHeight = useTransform(scrollY, [0, 100], [88, 64]);
 
   const handleMouseEnter = useCallback((label: string) => {
     if (dropdownTimeoutRef[0]) {
@@ -112,7 +113,7 @@ export function Header() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <motion.div className="flex items-center justify-between" style={{ height: headerHeight }}>
             {/* Logo with scale on scroll */}
             <Link href="/" className="flex items-center group">
               <motion.div style={{ scale: logoScale }}>
@@ -121,7 +122,7 @@ export function Header() {
                   alt="Ironworkers Mass Timber"
                   width={200}
                   height={56}
-                  className="h-10 md:h-14 w-auto group-hover:brightness-110 transition-all"
+                  className="h-12 md:h-16 w-auto group-hover:brightness-110 transition-all"
                   priority
                 />
               </motion.div>
@@ -217,7 +218,7 @@ export function Header() {
                 <Menu className="w-5 h-5" />
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </motion.header>
 
