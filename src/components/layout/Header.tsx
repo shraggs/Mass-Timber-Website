@@ -42,7 +42,7 @@ export function Header() {
   const dropdownTimeoutRef = useState<NodeJS.Timeout | null>(null);
 
   const { scrollY } = useScroll();
-  const headerBg = useTransform(scrollY, [0, 100], ['rgba(26,26,23,0.7)', 'rgba(26,26,23,0.95)']);
+  const headerBg = useTransform(scrollY, [0, 100], ['rgba(30,58,42,0.75)', 'rgba(30,58,42,0.95)']);
   const headerBlur = useTransform(scrollY, [0, 100], [12, 24]);
   const headerShadow = useTransform(
     scrollY,
@@ -69,7 +69,7 @@ export function Header() {
   return (
     <>
       {/* Top info bar */}
-      <div className="hidden md:block bg-charcoal-950 text-cream/80 text-sm py-2">
+      <div className="hidden md:block bg-[#1E3A2A] text-cream/80 text-sm py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center gap-6">
             <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-2 hover:text-amber-400 transition-colors">
