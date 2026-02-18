@@ -49,7 +49,7 @@ export function Header() {
     [0, 100],
     ['0 0 0 rgba(0,0,0,0)', '0 4px 30px rgba(0,0,0,0.3)']
   );
-  const logoScale = useTransform(scrollY, [0, 100], [1.35, 0.9]);
+  const logoScale = useTransform(scrollY, [0, 100], [1.1, 0.85]);
   const headerHeight = useTransform(scrollY, [0, 100], [88, 64]);
 
   const handleMouseEnter = useCallback((label: string) => {
