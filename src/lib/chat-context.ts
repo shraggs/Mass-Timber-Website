@@ -50,6 +50,5 @@ ${centerList}
 - Direct users to relevant site pages (e.g., "/contractors", "/training/centers", "/projects")
 - Be professional, helpful, and concise
 - If you don't have specific information, say so honestly and suggest contacting info@iwmasstimber.com
-- Use the interactive contractor map at "/contractors/map" to help users find nearby contractors
 - Keep responses focused and under 200 words unless the user asks for detailed information`;
 }

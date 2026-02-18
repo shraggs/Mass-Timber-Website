@@ -5,7 +5,6 @@ import { Container } from '@/components/ui/Container';
 import { TabGroup } from '@/components/ui/TabGroup';
 import { SearchFilter } from '@/components/ui/SearchFilter';
 import { ContractorCard } from '@/components/cards/ContractorCard';
-import { Button } from '@/components/ui/Button';
 import { useSearch } from '@/hooks/useSearch';
 import { slideshowImages } from '@/data/slideshow-images';
 import contractorsData from '@/data/contractors.json';
@@ -67,17 +66,9 @@ export default function ContractorsPage() {
             className="mb-8"
           />
 
-          <div className="flex items-center justify-between mb-6">
-            <p className="text-sm text-charcoal-950/50">
-              Showing {filteredItems.length} of {contractors.length} contractors
-            </p>
-            <Button variant="outline" size="sm" href="/contractors/map">
-              <svg className="w-4 h-4 mr-1.5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-              </svg>
-              View Map
-            </Button>
-          </div>
+          <p className="text-sm text-charcoal-950/50 mb-6">
+            Showing {filteredItems.length} of {contractors.length} contractors
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((contractor) => (
