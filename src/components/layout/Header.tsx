@@ -128,11 +128,8 @@ export function Header() {
               </motion.div>
             </Link>
 
-            {/* Spacer pushes nav to the right */}
-            <div className="flex-1" />
-
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-0.5">
+            {/* Desktop Navigation - centered */}
+            <nav className="hidden lg:flex flex-1 items-center justify-center gap-0.5">
               {navItems.map((item) => (
                 <div
                   key={item.label}
