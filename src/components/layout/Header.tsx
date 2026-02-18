@@ -115,7 +115,7 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div className="flex items-center justify-between" style={{ height: headerHeight }}>
             {/* Logo with scale on scroll */}
-            <Link href="/" className="flex items-center group">
+            <Link href="/" className="flex items-center group mr-10 lg:mr-16">
               <motion.div style={{ scale: logoScale, transformOrigin: 'left center' }}>
                 <Image
                   src="/images/iw-logo.webp"
@@ -129,7 +129,7 @@ export function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-0.5">
               {navItems.map((item) => (
                 <div
                   key={item.label}
