@@ -116,7 +116,7 @@ export function Header() {
           <motion.div className="flex items-center justify-between" style={{ height: headerHeight }}>
             {/* Logo with scale on scroll */}
             <Link href="/" className="flex items-center group">
-              <motion.div style={{ scale: logoScale }}>
+              <motion.div style={{ scale: logoScale, transformOrigin: 'left center' }}>
                 <Image
                   src="/images/iw-logo.webp"
                   alt="Ironworkers Mass Timber"
