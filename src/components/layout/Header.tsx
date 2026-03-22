@@ -49,8 +49,8 @@ export function Header() {
     [0, 100],
     ['0 0 0 rgba(0,0,0,0)', '0 4px 30px rgba(0,0,0,0.3)']
   );
-  const logoScale = useTransform(scrollY, [0, 100], [1, 0.8]);
-  const headerHeight = useTransform(scrollY, [0, 100], [96, 64]);
+  const logoScale = useTransform(scrollY, [0, 100], [1, 0.75]);
+  const headerHeight = useTransform(scrollY, [0, 100], [120, 72]);
 
   const handleMouseEnter = useCallback((label: string) => {
     if (dropdownTimeoutRef[0]) {
@@ -122,7 +122,7 @@ export function Header() {
                   alt="Ironworkers Mass Timber"
                   width={200}
                   height={200}
-                  className="h-[80px] w-auto group-hover:brightness-110 transition-all rounded-full"
+                  className="h-[108px] w-auto group-hover:brightness-110 transition-all rounded-full"
                   priority
                 />
               </motion.div>
