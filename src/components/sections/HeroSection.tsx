@@ -1,49 +1,25 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { GradientOrb } from '@/components/ui/GradientOrb';
-import { useImageSlideshow } from '@/hooks/useImageSlideshow';
-import { slideshowImages } from '@/data/slideshow-images';
-import { isRotatedImage, getImageRotation, cn } from '@/lib/utils';
 import { TextReveal, ScrollReveal, StaggerContainer, StaggerItem } from '@/components/motion';
 
-const images = slideshowImages.hero;
-
 export function HeroSection() {
-  const { currentIndex } = useImageSlideshow({
-    imageCount: images.length,
-    interval: 6000,
-  });
-
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Slideshow background images */}
-      {images.map((image, index) => {
-        const rotated = isRotatedImage(image.src);
-        const isActive = index === currentIndex;
-
-        return (
-          <div
-            key={image.src}
-            className={cn(
-              'absolute slideshow-image',
-              rotated ? 'inset-[-50%] w-[200%] h-[200%]' : 'inset-0',
-              isActive ? 'opacity-100 z-[1]' : 'opacity-0 z-0'
-            )}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className={cn('object-cover', getImageRotation(image.src))}
-              priority={index === 0}
-              sizes="100vw"
-            />
-          </div>
-        );
-      })}
+      {/* Background video */}
+      <div className="absolute inset-0 z-[1]">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
+      </div>
 
       {/* Enhanced gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal-950/85 via-charcoal-950/60 to-charcoal-950/30 z-[2]" />

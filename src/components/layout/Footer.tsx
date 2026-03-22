@@ -36,11 +36,11 @@ export function Footer() {
             <div>
               <div className="mb-4">
                 <Image
-                  src="/images/iw-logo.webp"
-                  alt="Ironworkers Mass Timber"
+                  src="/images/Secondary_Mass_Timber_Logo.PNG"
+                  alt="Impact Mass Timber"
                   width={180}
-                  height={50}
-                  className="h-12 w-auto"
+                  height={60}
+                  className="h-14 w-auto"
                 />
               </div>
               <p className="text-cream/60 text-sm leading-relaxed mb-6">{SITE_TAGLINE}</p>

@@ -118,11 +118,11 @@ export function Header() {
             <Link href="/" className="flex-shrink-0 flex items-center group">
               <motion.div style={{ scale: logoScale, transformOrigin: 'left center' }}>
                 <Image
-                  src="/images/iw-logo.webp"
+                  src="/images/Main_Mass_Timber_Logo.PNG"
                   alt="Ironworkers Mass Timber"
-                  width={200}
-                  height={56}
-                  className="h-12 md:h-16 w-auto group-hover:brightness-110 transition-all"
+                  width={64}
+                  height={64}
+                  className="h-12 md:h-14 w-auto group-hover:brightness-110 transition-all rounded-full"
                   priority
                 />
               </motion.div>
