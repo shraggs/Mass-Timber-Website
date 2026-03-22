@@ -120,9 +120,9 @@ export function Header() {
                 <Image
                   src="/images/Main_Mass_Timber_Logo.PNG"
                   alt="Ironworkers Mass Timber"
-                  width={64}
-                  height={64}
-                  className="h-12 md:h-14 w-auto group-hover:brightness-110 transition-all rounded-full"
+                  width={128}
+                  height={128}
+                  className="h-14 md:h-16 lg:h-[72px] w-auto group-hover:brightness-110 transition-all rounded-full"
                   priority
                 />
               </motion.div>
