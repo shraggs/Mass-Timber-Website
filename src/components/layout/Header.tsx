@@ -49,7 +49,6 @@ export function Header() {
     [0, 100],
     ['0 0 0 rgba(0,0,0,0)', '0 4px 30px rgba(0,0,0,0.3)']
   );
-  const logoScale = useTransform(scrollY, [0, 100], [1, 0.75]);
   const headerHeight = useTransform(scrollY, [0, 100], [120, 72]);
 
   const handleMouseEnter = useCallback((label: string) => {
@@ -115,17 +114,15 @@ export function Header() {
         <div className="px-4 sm:px-8 lg:px-12">
           <motion.div className="flex items-center" style={{ height: headerHeight }}>
             {/* Logo on far left */}
-            <Link href="/" className="flex-shrink-0 flex items-center group">
-              <motion.div style={{ scale: logoScale, transformOrigin: 'left center' }}>
-                <Image
-                  src="/images/Main_Mass_Timber_Logo.PNG"
-                  alt="Ironworkers Mass Timber"
-                  width={200}
-                  height={200}
-                  className="h-[108px] w-auto group-hover:brightness-110 transition-all rounded-full"
-                  priority
-                />
-              </motion.div>
+            <Link href="/" className="flex-shrink-0 flex items-center group py-1">
+              <Image
+                src="/images/Main_Mass_Timber_Logo.PNG"
+                alt="Ironworkers Mass Timber"
+                width={200}
+                height={200}
+                className="h-full max-h-[112px] w-auto group-hover:brightness-110 transition-all rounded-full"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation - centered */}
