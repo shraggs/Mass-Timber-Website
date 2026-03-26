@@ -50,7 +50,7 @@ export function Header() {
     [0, 100],
     ['0 0 0 rgba(0,0,0,0)', '0 4px 30px rgba(0,0,0,0.3)']
   );
-  const headerHeight = useTransform(scrollY, [0, 200], [288, 96]);
+  const headerHeight = useTransform(scrollY, [0, 150], [140, 72]);
 
   const handleMouseEnter = useCallback((label: string) => {
     if (dropdownTimeoutRef[0]) {
@@ -104,7 +104,7 @@ export function Header() {
 
       {/* Main navigation */}
       <motion.header
-        className="sticky top-0 z-50 border-b border-white/[0.06]"
+        className="sticky top-0 z-50 border-b border-white/[0.06] overflow-hidden"
         style={{
           backgroundColor: headerBg,
           backdropFilter: useTransform(headerBlur, (v) => `blur(${v}px)`),
@@ -113,18 +113,18 @@ export function Header() {
         }}
       >
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="flex items-center justify-between" style={{ height: headerHeight }}>
+          <motion.div className="flex items-center justify-between h-full py-2" style={{ height: headerHeight }}>
             {/* Left - Main Logo */}
-            <Link href="/" className="flex-shrink-0 group">
+            <Link href="/" className="flex-shrink-0 group h-full">
               <img
                 src="/images/Main_Mass_Timber_Logo.PNG"
                 alt="Ironworkers Mass Timber"
-                className="h-[220px] w-[220px] object-contain group-hover:brightness-110 transition-all rounded-full"
+                className="h-full w-auto object-contain group-hover:brightness-110 transition-all rounded-full"
               />
             </Link>
 
             {/* Center - Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex flex-1 items-center justify-evenly mx-4">
               {navItems.map((item) => (
                 <div
                   key={item.label}
@@ -213,11 +213,11 @@ export function Header() {
               </button>
 
               {/* Secondary Logo */}
-              <Link href="/" className="hidden lg:block flex-shrink-0">
+              <Link href="/" className="hidden lg:flex flex-shrink-0 h-full items-center py-2">
                 <img
                   src="/images/Secondary_Mass_Timber_Logo.PNG"
                   alt="Impact Mass Timber"
-                  className="h-[200px] w-auto object-contain hover:brightness-110 transition-all"
+                  className="h-full w-auto object-contain hover:brightness-110 transition-all"
                 />
               </Link>
 
