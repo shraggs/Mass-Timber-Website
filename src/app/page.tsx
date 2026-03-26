@@ -16,7 +16,6 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <SectionDivider variant="wave" fillColor="#FDFCF8" />
       <StatsBar />
       <SectionDivider variant="diagonal" fillColor="#FDFCF8" />
       <DirectoryPreview />
