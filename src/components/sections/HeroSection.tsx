@@ -147,35 +147,19 @@ export function HeroSection() {
       {/* Hero text banner below */}
       <div className="relative z-10 bg-gradient-to-r from-[#1E3A2A] via-[#1E3A2A] to-forest-900 border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 md:py-16">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div className="max-w-2xl">
-              <span className="inline-block glass-dark text-amber-400 text-xs font-semibold px-4 py-2 rounded-full mb-4 tracking-wider uppercase">
-                Ironworker Precision
+          <div className="text-center">
+            <span className="inline-block glass-dark text-amber-400 text-xs font-semibold px-4 py-2 rounded-full mb-4 tracking-wider uppercase">
+              Ironworker Precision
+            </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-[family-name:var(--font-jakarta)] leading-tight">
+              Mass Timber Construction.
+              <span className="block text-amber-400 mt-1">
+                Ironworker Precision.
               </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-[family-name:var(--font-jakarta)] leading-tight">
-                Mass Timber Construction.
-                <span className="block text-amber-400 mt-1">
-                  Ironworker Precision.
-                </span>
-              </h1>
-              <p className="text-cream/60 text-base mt-4 max-w-lg leading-relaxed">
-                The leading network of Ironworker contractors and suppliers for mass timber construction across North America.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="/projects"
-                className="inline-flex items-center px-6 py-3 bg-amber-400 text-charcoal-950 font-semibold rounded-lg hover:bg-amber-500 transition-colors text-base"
-              >
-                Explore Projects
-              </a>
-              <a
-                href="/contractors"
-                className="inline-flex items-center px-6 py-3 border border-cream/30 text-cream font-semibold rounded-lg hover:bg-cream hover:text-charcoal-950 transition-colors text-base"
-              >
-                Find a Contractor
-              </a>
-            </div>
+            </h1>
+            <p className="text-cream/60 text-base mt-4 max-w-xl mx-auto leading-relaxed">
+              The leading network of Ironworker contractors and suppliers for mass timber construction across North America.
+            </p>
           </div>
         </div>
       </div>

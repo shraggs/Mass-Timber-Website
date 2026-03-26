@@ -194,13 +194,19 @@ export function Header() {
               ))}
             </nav>
 
-            {/* Right - Secondary Logo, Get Started, Search, Mobile Menu */}
+            {/* Right - CTA Buttons, Search, Secondary Logo, Mobile Menu */}
             <div className="flex items-center gap-4">
               <Link
-                href="/contact"
-                className="hidden md:inline-flex px-6 py-3 bg-amber-400 text-charcoal-950 text-lg font-bold rounded-lg hover:bg-amber-500 transition-colors"
+                href="/projects"
+                className="hidden lg:inline-flex px-5 py-2.5 bg-amber-400 text-charcoal-950 text-base font-bold rounded-lg hover:bg-amber-500 transition-colors"
               >
-                Get Started
+                Explore Projects
+              </Link>
+              <Link
+                href="/contractors"
+                className="hidden lg:inline-flex px-5 py-2.5 border-2 border-cream/30 text-cream text-base font-bold rounded-lg hover:bg-cream hover:text-charcoal-950 transition-colors"
+              >
+                Find a Contractor
               </Link>
               <button className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center text-cream/70 hover:text-amber-400 hover:border-amber-400 transition-colors" aria-label="Search">
                 <Search className="w-5 h-5" />
