@@ -165,7 +165,7 @@ export function Header() {
                             >
                               <Link
                                 href={child.href}
-                                className="block px-5 py-3 text-base text-cream/80 hover:text-amber-400 hover:bg-white/5 transition-colors"
+                                className="block px-5 py-3 text-base text-cream/80 hover:text-amber-400 hover:bg-amber-400/10 hover:pl-7 transition-all duration-200"
                                 onClick={() => setActiveDropdown(null)}
                               >
                                 {child.label}
