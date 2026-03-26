@@ -50,7 +50,7 @@ export function Header() {
     [0, 100],
     ['0 0 0 rgba(0,0,0,0)', '0 4px 30px rgba(0,0,0,0.3)']
   );
-  const headerHeight = useTransform(scrollY, [0, 100], [120, 80]);
+  const headerHeight = useTransform(scrollY, [0, 200], [288, 96]);
 
   const handleMouseEnter = useCallback((label: string) => {
     if (dropdownTimeoutRef[0]) {
@@ -119,7 +119,7 @@ export function Header() {
               <img
                 src="/images/Main_Mass_Timber_Logo.PNG"
                 alt="Ironworkers Mass Timber"
-                className="h-[104px] w-[104px] object-contain group-hover:brightness-110 transition-all rounded-full"
+                className="h-[220px] w-[220px] object-contain group-hover:brightness-110 transition-all rounded-full"
               />
             </Link>
 
@@ -137,7 +137,7 @@ export function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-2 text-base font-medium text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-1.5"
+                      className="px-4 py-3 text-lg font-semibold text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-2"
                     >
                       {item.label}
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -145,7 +145,7 @@ export function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="px-3 py-2 text-base font-medium text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-1.5"
+                      className="px-4 py-3 text-lg font-semibold text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-2"
                     >
                       {item.label}
                       {item.children && (
@@ -179,7 +179,7 @@ export function Header() {
                             >
                               <Link
                                 href={child.href}
-                                className="block px-5 py-3 text-base text-cream/80 hover:text-amber-400 hover:bg-white/5 transition-colors"
+                                className="block px-5 py-3 text-lg text-cream/80 hover:text-amber-400 hover:bg-white/5 transition-colors"
                                 onClick={() => setActiveDropdown(null)}
                               >
                                 {child.label}
@@ -198,7 +198,7 @@ export function Header() {
             <div className="flex items-center gap-4">
               <Link
                 href="/contact"
-                className="hidden md:inline-flex px-5 py-2.5 bg-amber-400 text-charcoal-950 text-sm font-bold rounded-lg hover:bg-amber-500 transition-colors"
+                className="hidden md:inline-flex px-6 py-3 bg-amber-400 text-charcoal-950 text-lg font-bold rounded-lg hover:bg-amber-500 transition-colors"
               >
                 Get Started
               </Link>
@@ -211,7 +211,7 @@ export function Header() {
                 <img
                   src="/images/Secondary_Mass_Timber_Logo.PNG"
                   alt="Impact Mass Timber"
-                  className="h-[96px] w-auto object-contain hover:brightness-110 transition-all"
+                  className="h-[200px] w-auto object-contain hover:brightness-110 transition-all"
                 />
               </Link>
 
