@@ -1,11 +1,9 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Mail, Phone, Search, Menu, ChevronDown, ExternalLink } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { CONTACT_EMAIL, CONTACT_PHONE, SOCIAL_LINKS } from '@/lib/constants';
 import { MobileMenu } from './MobileMenu';
 
@@ -40,17 +38,14 @@ const navItems = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const dropdownTimeoutRef = useState<NodeJS.Timeout | null>(null);
 
-  const { scrollY } = useScroll();
-  const headerBg = useTransform(scrollY, [0, 100], ['rgba(30,58,42,1)', 'rgba(30,58,42,1)']);
-  const headerBlur = useTransform(scrollY, [0, 100], [0, 24]);
-  const headerShadow = useTransform(
-    scrollY,
-    [0, 100],
-    ['0 0 0 rgba(0,0,0,0)', '0 4px 30px rgba(0,0,0,0.3)']
-  );
-  const headerHeight = useTransform(scrollY, [0, 150], [140, 72]);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const handleMouseEnter = useCallback((label: string) => {
     if (dropdownTimeoutRef[0]) {
@@ -71,7 +66,7 @@ export function Header() {
     <>
       {/* Top info bar */}
       <div className="hidden md:block bg-[#162D21] text-cream/80 text-sm py-2 border-b border-white/[0.04]">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <div className="w-full px-6 lg:px-10 flex justify-between items-center">
           <div className="flex items-center gap-6">
             <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-2 hover:text-amber-400 transition-colors">
               <Mail className="w-4 h-4" />
@@ -102,29 +97,25 @@ export function Header() {
         </div>
       </div>
 
-      {/* Main navigation */}
-      <motion.header
-        className="sticky top-0 z-50 border-b border-white/[0.06] overflow-hidden"
-        style={{
-          backgroundColor: headerBg,
-          backdropFilter: useTransform(headerBlur, (v) => `blur(${v}px)`),
-          WebkitBackdropFilter: useTransform(headerBlur, (v) => `blur(${v}px)`),
-          boxShadow: headerShadow,
-        }}
+      {/* Main navigation - no framer motion height animation to avoid glitching */}
+      <header
+        className={`sticky top-0 z-50 bg-[#1E3A2A] border-b border-white/[0.06] transition-all duration-300 ease-out ${
+          scrolled ? 'h-[72px] shadow-lg shadow-black/30' : 'h-[100px]'
+        }`}
       >
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="flex items-center justify-between h-full py-2" style={{ height: headerHeight }}>
+        <div className="w-full h-full px-6 lg:px-10">
+          <div className="flex items-center justify-between h-full">
             {/* Left - Main Logo */}
-            <Link href="/" className="flex-shrink-0 group h-full">
+            <Link href="/" className="flex-shrink-0 h-full py-2">
               <img
                 src="/images/Main_Mass_Timber_Logo.PNG"
                 alt="Ironworkers Mass Timber"
-                className="h-full w-auto object-contain group-hover:brightness-110 transition-all rounded-full"
+                className="h-full w-auto object-contain hover:brightness-110 transition-all rounded-full"
               />
             </Link>
 
-            {/* Center - Navigation */}
-            <nav className="hidden lg:flex flex-1 items-center justify-evenly mx-4">
+            {/* Center - Navigation spread across full width */}
+            <nav className="hidden lg:flex flex-1 items-center justify-between mx-8">
               {navItems.map((item) => (
                 <div
                   key={item.label}
@@ -137,7 +128,7 @@ export function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-3 text-lg font-semibold text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-2"
+                      className="px-2 py-2 text-base font-semibold text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-1.5 whitespace-nowrap"
                     >
                       {item.label}
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -145,16 +136,11 @@ export function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="px-4 py-3 text-lg font-semibold text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-2"
+                      className="px-2 py-2 text-base font-semibold text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-1.5 whitespace-nowrap"
                     >
                       {item.label}
                       {item.children && (
-                        <motion.span
-                          animate={{ rotate: activeDropdown === item.label ? 180 : 0 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <ChevronDown className="w-4 h-4" />
-                        </motion.span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
                       )}
                     </Link>
                   )}
@@ -163,23 +149,23 @@ export function Header() {
                   <AnimatePresence>
                     {item.children && activeDropdown === item.label && (
                       <motion.div
-                        className="absolute top-full left-0 pt-3 z-50"
-                        initial={{ opacity: 0, y: -8 }}
+                        className="absolute top-full left-0 pt-2 z-[60]"
+                        initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.2, ease: 'easeOut' }}
+                        exit={{ opacity: 0, y: -4 }}
+                        transition={{ duration: 0.15 }}
                       >
-                        <div className="w-64 glass-dark rounded-xl py-2 border border-white/[0.08]">
+                        <div className="w-60 bg-[#1E3A2A] rounded-xl py-2 border border-white/10 shadow-xl shadow-black/40">
                           {item.children.map((child, i) => (
                             <motion.div
                               key={child.href}
-                              initial={{ opacity: 0, x: -8 }}
+                              initial={{ opacity: 0, x: -6 }}
                               animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: i * 0.05, duration: 0.2 }}
+                              transition={{ delay: i * 0.04, duration: 0.15 }}
                             >
                               <Link
                                 href={child.href}
-                                className="block px-5 py-3 text-lg text-cream/80 hover:text-amber-400 hover:bg-white/5 transition-colors"
+                                className="block px-5 py-3 text-base text-cream/80 hover:text-amber-400 hover:bg-white/5 transition-colors"
                                 onClick={() => setActiveDropdown(null)}
                               >
                                 {child.label}
@@ -194,22 +180,22 @@ export function Header() {
               ))}
             </nav>
 
-            {/* Right - CTA Buttons, Search, Secondary Logo, Mobile Menu */}
-            <div className="flex items-center gap-4">
+            {/* Right - CTA Buttons, Search, Secondary Logo */}
+            <div className="flex items-center gap-3 h-full">
               <Link
                 href="/projects"
-                className="hidden lg:inline-flex px-5 py-2.5 bg-amber-400 text-charcoal-950 text-base font-bold rounded-lg hover:bg-amber-500 transition-colors"
+                className="hidden xl:inline-flex px-4 py-2 bg-amber-400 text-charcoal-950 text-sm font-bold rounded-lg hover:bg-amber-500 transition-colors whitespace-nowrap"
               >
                 Explore Projects
               </Link>
               <Link
                 href="/contractors"
-                className="hidden lg:inline-flex px-5 py-2.5 border-2 border-cream/30 text-cream text-base font-bold rounded-lg hover:bg-cream hover:text-charcoal-950 transition-colors"
+                className="hidden xl:inline-flex px-4 py-2 border-2 border-cream/30 text-cream text-sm font-bold rounded-lg hover:bg-cream hover:text-charcoal-950 transition-colors whitespace-nowrap"
               >
                 Find a Contractor
               </Link>
-              <button className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center text-cream/70 hover:text-amber-400 hover:border-amber-400 transition-colors" aria-label="Search">
-                <Search className="w-5 h-5" />
+              <button className="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center text-cream/70 hover:text-amber-400 hover:border-amber-400 transition-colors" aria-label="Search">
+                <Search className="w-4 h-4" />
               </button>
 
               {/* Secondary Logo */}
@@ -229,9 +215,9 @@ export function Header() {
                 <Menu className="w-5 h-5" />
               </button>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </motion.header>
+      </header>
 
       <AnimatePresence>
         {mobileMenuOpen && (
