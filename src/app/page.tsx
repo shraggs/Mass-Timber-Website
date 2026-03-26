@@ -1,5 +1,4 @@
 import { HeroSection } from '@/components/sections/HeroSection';
-import { WhatIsMassTimber } from '@/components/sections/WhatIsMassTimber';
 import { StatsBar } from '@/components/sections/StatsBar';
 import { DirectoryPreview } from '@/components/sections/DirectoryPreview';
 import { FeaturedProjects } from '@/components/sections/FeaturedProjects';
@@ -18,7 +17,6 @@ export default function Home() {
     <>
       <HeroSection />
       <SectionDivider variant="wave" fillColor="#FDFCF8" />
-      <WhatIsMassTimber />
       <StatsBar />
       <SectionDivider variant="diagonal" fillColor="#FDFCF8" />
       <DirectoryPreview />

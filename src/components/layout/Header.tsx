@@ -17,6 +17,7 @@ const navItems = [
     children: [
       { label: 'Our Union', href: '/about' },
       { label: 'Leadership Team', href: '/about/leadership' },
+      { label: 'What is Mass Timber?', href: '/about/what-is-mass-timber' },
     ],
   },
   {
@@ -49,7 +50,7 @@ export function Header() {
     [0, 100],
     ['0 0 0 rgba(0,0,0,0)', '0 4px 30px rgba(0,0,0,0.3)']
   );
-  const headerHeight = useTransform(scrollY, [0, 100], [160, 80]);
+  const headerHeight = useTransform(scrollY, [0, 100], [80, 64]);
 
   const handleMouseEnter = useCallback((label: string) => {
     if (dropdownTimeoutRef[0]) {
@@ -69,8 +70,8 @@ export function Header() {
   return (
     <>
       {/* Top info bar */}
-      <div className="hidden md:block bg-[#1E3A2A] text-cream/80 text-sm py-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className="hidden md:block bg-[#162D21] text-cream/80 text-sm py-2 border-b border-white/[0.04]">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center gap-6">
             <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-2 hover:text-amber-400 transition-colors">
               <Mail className="w-4 h-4" />
@@ -101,7 +102,7 @@ export function Header() {
         </div>
       </div>
 
-      {/* Main navigation with smooth scroll-responsive glassmorphism */}
+      {/* Main navigation */}
       <motion.header
         className="sticky top-0 z-50 border-b border-white/[0.06]"
         style={{
@@ -111,19 +112,19 @@ export function Header() {
           boxShadow: headerShadow,
         }}
       >
-        <div className="px-4 sm:px-8 lg:px-12">
-          <motion.div className="flex items-center" style={{ height: headerHeight }}>
-            {/* Logo on far left */}
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div className="flex items-center justify-between" style={{ height: headerHeight }}>
+            {/* Left - Main Logo */}
             <Link href="/" className="flex-shrink-0 group">
               <img
                 src="/images/Main_Mass_Timber_Logo.PNG"
                 alt="Ironworkers Mass Timber"
-                className="h-[148px] w-[148px] object-contain group-hover:brightness-110 transition-all rounded-full"
+                className="h-[64px] w-[64px] object-contain group-hover:brightness-110 transition-all rounded-full"
               />
             </Link>
 
-            {/* Desktop Navigation - centered */}
-            <nav className="hidden lg:flex flex-1 items-center justify-center gap-0.5">
+            {/* Center - Navigation */}
+            <nav className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
                 <div
                   key={item.label}
@@ -136,15 +137,15 @@ export function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-2 text-sm font-medium text-cream/80 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-1"
+                      className="px-3 py-2 text-base font-medium text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-1.5"
                     >
                       {item.label}
-                      <ExternalLink className="w-3 h-3" />
+                      <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   ) : (
                     <Link
                       href={item.href}
-                      className="px-3 py-2 text-sm font-medium text-cream/80 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-1"
+                      className="px-3 py-2 text-base font-medium text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-1.5"
                     >
                       {item.label}
                       {item.children && (
@@ -152,13 +153,13 @@ export function Header() {
                           animate={{ rotate: activeDropdown === item.label ? 180 : 0 }}
                           transition={{ duration: 0.2 }}
                         >
-                          <ChevronDown className="w-3.5 h-3.5" />
+                          <ChevronDown className="w-4 h-4" />
                         </motion.span>
                       )}
                     </Link>
                   )}
 
-                  {/* Animated dropdown */}
+                  {/* Dropdown */}
                   <AnimatePresence>
                     {item.children && activeDropdown === item.label && (
                       <motion.div
@@ -168,7 +169,7 @@ export function Header() {
                         exit={{ opacity: 0, y: -8 }}
                         transition={{ duration: 0.2, ease: 'easeOut' }}
                       >
-                        <div className="w-56 glass-dark rounded-xl py-2">
+                        <div className="w-64 glass-dark rounded-xl py-2 border border-white/[0.08]">
                           {item.children.map((child, i) => (
                             <motion.div
                               key={child.href}
@@ -178,7 +179,7 @@ export function Header() {
                             >
                               <Link
                                 href={child.href}
-                                className="block px-4 py-2.5 text-sm text-cream/80 hover:text-amber-400 hover:bg-white/5 transition-colors"
+                                className="block px-5 py-3 text-base text-cream/80 hover:text-amber-400 hover:bg-white/5 transition-colors"
                                 onClick={() => setActiveDropdown(null)}
                               >
                                 {child.label}
@@ -193,17 +194,27 @@ export function Header() {
               ))}
             </nav>
 
-            {/* CTA + Search + Mobile Menu */}
-            <div className="flex items-center gap-3 ml-4">
+            {/* Right - Secondary Logo, Get Started, Search, Mobile Menu */}
+            <div className="flex items-center gap-4">
               <Link
                 href="/contact"
-                className="hidden md:inline-flex px-4 py-2 bg-amber-400 text-charcoal-950 text-sm font-semibold rounded-lg hover:bg-amber-500 transition-colors animate-pulse-glow"
+                className="hidden md:inline-flex px-5 py-2.5 bg-amber-400 text-charcoal-950 text-sm font-bold rounded-lg hover:bg-amber-500 transition-colors"
               >
                 Get Started
               </Link>
               <button className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center text-cream/70 hover:text-amber-400 hover:border-amber-400 transition-colors" aria-label="Search">
                 <Search className="w-5 h-5" />
               </button>
+
+              {/* Secondary Logo */}
+              <Link href="/" className="hidden lg:block flex-shrink-0">
+                <img
+                  src="/images/Secondary_Mass_Timber_Logo.PNG"
+                  alt="Impact Mass Timber"
+                  className="h-[48px] w-auto object-contain hover:brightness-110 transition-all"
+                />
+              </Link>
+
               <button
                 className="lg:hidden w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center text-cream/70 hover:text-amber-400 hover:border-amber-400 transition-colors"
                 onClick={() => setMobileMenuOpen(true)}
