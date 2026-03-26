@@ -128,7 +128,7 @@ export function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-2 py-2 text-base font-semibold text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-1.5 whitespace-nowrap"
+                      className="px-4 py-2 text-sm font-semibold text-cream/90 bg-white/[0.06] border border-white/[0.08] hover:bg-white/[0.12] hover:text-amber-400 hover:border-amber-400/30 transition-all rounded-lg inline-flex items-center gap-1.5 whitespace-nowrap"
                     >
                       {item.label}
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -136,7 +136,7 @@ export function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="px-2 py-2 text-base font-semibold text-cream/90 hover:text-amber-400 transition-colors rounded-lg inline-flex items-center gap-1.5 whitespace-nowrap"
+                      className="px-4 py-2 text-sm font-semibold text-cream/90 bg-white/[0.06] border border-white/[0.08] hover:bg-white/[0.12] hover:text-amber-400 hover:border-amber-400/30 transition-all rounded-lg inline-flex items-center gap-1.5 whitespace-nowrap"
                     >
                       {item.label}
                       {item.children && (
@@ -184,13 +184,13 @@ export function Header() {
             <div className="flex items-center gap-3 h-full">
               <Link
                 href="/projects"
-                className="hidden xl:inline-flex px-4 py-2 bg-amber-400 text-charcoal-950 text-sm font-bold rounded-lg hover:bg-amber-500 transition-colors whitespace-nowrap"
+                className="hidden xl:inline-flex px-4 py-2 bg-amber-400 text-charcoal-950 text-xs font-bold rounded-md hover:bg-amber-500 transition-colors whitespace-nowrap"
               >
                 Explore Projects
               </Link>
               <Link
                 href="/contractors"
-                className="hidden xl:inline-flex px-4 py-2 border-2 border-cream/30 text-cream text-sm font-bold rounded-lg hover:bg-cream hover:text-charcoal-950 transition-colors whitespace-nowrap"
+                className="hidden xl:inline-flex px-4 py-2 border border-cream/30 text-cream text-xs font-bold rounded-md hover:bg-cream hover:text-charcoal-950 transition-colors whitespace-nowrap"
               >
                 Find a Contractor
               </Link>
@@ -199,11 +199,11 @@ export function Header() {
               </button>
 
               {/* Secondary Logo */}
-              <Link href="/" className="hidden lg:flex flex-shrink-0 h-full items-center py-2">
+              <Link href="/" className="hidden lg:flex flex-shrink-0 items-center">
                 <img
                   src="/images/Secondary_Mass_Timber_Logo.PNG"
                   alt="Impact Mass Timber"
-                  className="h-full w-auto object-contain hover:brightness-110 transition-all"
+                  className="h-[56px] w-auto object-contain hover:brightness-110 transition-all"
                 />
               </Link>
 
