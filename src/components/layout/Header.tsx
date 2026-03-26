@@ -50,7 +50,7 @@ export function Header() {
     [0, 100],
     ['0 0 0 rgba(0,0,0,0)', '0 4px 30px rgba(0,0,0,0.3)']
   );
-  const headerHeight = useTransform(scrollY, [0, 100], [88, 72]);
+  const headerHeight = useTransform(scrollY, [0, 100], [120, 80]);
 
   const handleMouseEnter = useCallback((label: string) => {
     if (dropdownTimeoutRef[0]) {
@@ -119,7 +119,7 @@ export function Header() {
               <img
                 src="/images/Main_Mass_Timber_Logo.PNG"
                 alt="Ironworkers Mass Timber"
-                className="h-[72px] w-[72px] object-contain group-hover:brightness-110 transition-all rounded-full"
+                className="h-[104px] w-[104px] object-contain group-hover:brightness-110 transition-all rounded-full"
               />
             </Link>
 
@@ -211,7 +211,7 @@ export function Header() {
                 <img
                   src="/images/Secondary_Mass_Timber_Logo.PNG"
                   alt="Impact Mass Timber"
-                  className="h-[64px] w-auto object-contain hover:brightness-110 transition-all"
+                  className="h-[96px] w-auto object-contain hover:brightness-110 transition-all"
                 />
               </Link>
 
