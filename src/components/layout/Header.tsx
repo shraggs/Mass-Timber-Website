@@ -99,23 +99,23 @@ export function Header() {
 
       {/* Main navigation - no framer motion height animation to avoid glitching */}
       <header
-        className={`sticky top-0 z-50 bg-[#1E3A2A] border-b border-white/[0.06] transition-all duration-300 ease-out ${
+        className={`sticky top-0 z-[100] bg-[#1E3A2A] border-b border-white/[0.06] transition-all duration-300 ease-out ${
           scrolled ? 'h-[72px] shadow-lg shadow-black/30' : 'h-[100px]'
         }`}
       >
         <div className="w-full h-full px-6 lg:px-10">
           <div className="flex items-center justify-between h-full">
             {/* Left - Main Logo */}
-            <Link href="/" className="flex-shrink-0 h-full py-2">
+            <Link href="/" className="flex-shrink-0">
               <img
                 src="/images/Main_Mass_Timber_Logo.PNG"
                 alt="Ironworkers Mass Timber"
-                className="h-full w-auto object-contain hover:brightness-110 transition-all rounded-full"
+                className="h-[80px] w-[80px] object-contain hover:brightness-110 transition-all rounded-full"
               />
             </Link>
 
-            {/* Center - Navigation spread across full width */}
-            <nav className="hidden lg:flex flex-1 items-center justify-between mx-8">
+            {/* Center - Navigation with even spacing */}
+            <nav className="hidden lg:flex items-center justify-center gap-2 mx-6">
               {navItems.map((item) => (
                 <div
                   key={item.label}
@@ -203,7 +203,7 @@ export function Header() {
                 <img
                   src="/images/Secondary_Mass_Timber_Logo.PNG"
                   alt="Impact Mass Timber"
-                  className="h-[56px] w-auto object-contain hover:brightness-110 transition-all"
+                  className="h-[80px] w-auto object-contain hover:brightness-110 transition-all"
                 />
               </Link>
 
