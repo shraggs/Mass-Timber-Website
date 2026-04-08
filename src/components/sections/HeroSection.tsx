@@ -18,14 +18,14 @@ const contactCards = [
     title: 'Contact Representative',
     phone: '(000) 000-0000',
     email: 'msmith@placeholder.com',
-    image: null,
+    image: '/images/leadership/mike-smith.png',
   },
   {
-    name: 'Eddie Joslit',
+    name: 'Eddie Jezek',
     title: 'Contact Representative',
     phone: '(000) 000-0000',
-    email: 'ejoslit@placeholder.com',
-    image: null,
+    email: 'eddie@local86.org',
+    image: '/images/leadership/eddie-jezek.jpg',
   },
 ];
 
