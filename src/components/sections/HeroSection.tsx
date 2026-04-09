@@ -17,7 +17,7 @@ const contactCards = [
     name: 'Mike Smith',
     title: 'Contact Representative',
     phone: '(000) 000-0000',
-    email: 'msmith@placeholder.com',
+    email: 'msmith@iwdcne.org',
     image: '/images/leadership/mike-smith.png',
   },
   {
