@@ -28,6 +28,7 @@ const navItems = [
       { label: 'For Members', href: '/training/members' },
     ],
   },
+  { label: 'Safety', href: '/safety' },
   { label: 'Projects', href: '/projects' },
   { label: 'Contractors', href: '/contractors' },
   { label: 'Suppliers & Manufacturers', href: '/suppliers' },

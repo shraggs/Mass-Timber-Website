@@ -68,6 +68,11 @@ export const slideshowImages: Record<string, SlideshowImage[]> = {
     { src: '/images/timber-ceiling.png', alt: 'Timber ceiling detail' },
     { src: '/images/hero-interior.png', alt: 'Mass timber interior' },
   ],
+  safety: [
+    { src: '/images/workers-installing.png', alt: 'Iron workers installing mass timber' },
+    { src: '/images/construction-wide.png', alt: 'Construction site overview' },
+    { src: '/images/timber-beams-wide.png', alt: 'Mass timber beams' },
+  ],
   default: [
     { src: '/images/construction-wide.png', alt: 'Construction site' },
     { src: '/images/timber-beams-wide.png', alt: 'Timber beams' },
