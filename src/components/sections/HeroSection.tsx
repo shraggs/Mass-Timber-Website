@@ -10,7 +10,7 @@ const contactCards = [
     name: 'Tom Baun',
     title: 'Special Project Director',
     phone: '(000) 000-0000',
-    email: 'tbaun@placeholder.com',
+    email: 'tb3tree@gmail.com',
     image: '/images/leadership/tom-baun.jpeg',
   },
   {

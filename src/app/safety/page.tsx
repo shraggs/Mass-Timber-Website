@@ -58,7 +58,7 @@ export default function SafetyPage() {
       <PageBanner
         title="Safety"
         subtitle="Proven safety & performance in mass timber construction"
-        backgroundImage="/images/workers-installing.png"
+        backgroundImage="/images/safety-1.jpeg"
         images={slideshowImages.safety}
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Safety' }]}
       />
