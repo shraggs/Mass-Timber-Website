@@ -22,9 +22,9 @@ export const slideshowImages: Record<string, SlideshowImage[]> = {
     { src: '/images/timber-ceiling.png', alt: 'Timber ceiling detail' },
   ],
   projects: [
-    { src: '/images/rotated-projects.jpeg', alt: 'Mass timber project' },
+    { src: '/images/timber-frame-wide.jpg', alt: 'Mass timber frame project' },
     { src: '/images/construction-wide.png', alt: 'Wide construction site view' },
-    { src: '/images/rotated-site-1.jpg', alt: 'Construction site view' },
+    { src: '/images/hero-interior.png', alt: 'Mass timber interior' },
     { src: '/images/timber-beams-wide.png', alt: 'Timber beams wide shot' },
   ],
   contractors: [
