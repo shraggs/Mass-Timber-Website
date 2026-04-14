@@ -29,22 +29,22 @@ export function FeaturedProjects() {
   if (featuredProjects.length === 0) return null;
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-10 md:py-14">
       <Container>
         <ScrollReveal>
           <SectionHeading
             title="Award-Winning Projects"
             subtitle="Recognized for excellence in mass timber construction by IMPACT"
             align="center"
-            className="mb-12"
+            className="mb-8"
           />
         </ScrollReveal>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {featuredProjects.map((project) => (
             <StaggerItem key={project.id}>
               <Link href={`/projects/${project.slug}`} className="group block">
-                <div className="relative h-[320px] md:h-[400px] rounded-2xl overflow-hidden">
+                <div className="relative h-[220px] md:h-[260px] rounded-2xl overflow-hidden">
                   {/* Image */}
                   <Image
                     src={project.image || '/images/construction-wide.png'}
@@ -61,16 +61,11 @@ export function FeaturedProjects() {
                   {project.award && <AwardRibbon award={project.award} />}
 
                   {/* Content overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                    <p className="text-amber-400 text-sm font-semibold mb-2">{project.location}</p>
-                    <h3 className="text-2xl md:text-3xl font-bold text-cream font-[family-name:var(--font-jakarta)] mb-3 group-hover:text-amber-400 transition-colors">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+                    <p className="text-amber-400 text-xs font-semibold mb-1">{project.location}</p>
+                    <h3 className="text-lg md:text-xl font-bold text-cream font-[family-name:var(--font-jakarta)] mb-2 group-hover:text-amber-400 transition-colors">
                       {project.name}
                     </h3>
-                    {project.description && (
-                      <p className="text-cream/70 text-sm leading-relaxed line-clamp-2 mb-4 max-w-lg">
-                        {project.description}
-                      </p>
-                    )}
                     <div className="flex items-center gap-4 text-cream/60 text-xs">
                       {project.contractor && (
                         <span className="flex items-center gap-1">

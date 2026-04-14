@@ -34,6 +34,7 @@ const navItems = [
   { label: 'Suppliers & Manufacturers', href: '/suppliers' },
   { label: 'Partners', href: 'https://www.woodworksinnovationnetwork.org/', external: true },
   { label: 'Contact', href: '/contact' },
+  { label: 'FAQ', href: '/faq' },
 ];
 
 export function Header() {
@@ -111,7 +112,9 @@ export function Header() {
               <img
                 src="/images/Main_Mass_Timber_Logo.PNG"
                 alt="Ironworkers Mass Timber"
-                className="h-[80px] w-[80px] object-contain hover:brightness-110 transition-all rounded-full"
+                className={`object-contain hover:brightness-110 transition-all duration-300 ease-out rounded-full ${
+                  scrolled ? 'h-[56px] w-[56px]' : 'h-[92px] w-[92px]'
+                }`}
               />
             </Link>
 
@@ -204,7 +207,9 @@ export function Header() {
                 <img
                   src="/images/Secondary_Mass_Timber_Logo.PNG"
                   alt="Impact Mass Timber"
-                  className="h-[80px] w-auto object-contain hover:brightness-110 transition-all"
+                  className={`w-auto object-contain hover:brightness-110 transition-all duration-300 ease-out ${
+                    scrolled ? 'h-[56px]' : 'h-[92px]'
+                  }`}
                 />
               </Link>
 

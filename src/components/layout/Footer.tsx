@@ -28,19 +28,28 @@ const galleryImages = [
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal-950 text-cream pt-16 pb-8">
+    <footer className="relative bg-charcoal-950 text-cream pt-16 pb-8 overflow-hidden">
+      {/* Decorative watermark logo in left dead space */}
+      <Image
+        src="/images/Main_Mass_Timber_Logo.PNG"
+        alt=""
+        aria-hidden="true"
+        width={320}
+        height={320}
+        className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/4 w-[260px] h-[260px] xl:w-[320px] xl:h-[320px] opacity-[0.06] pointer-events-none select-none"
+      />
       <Container>
         <ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10 relative">
             {/* Column 1: Brand */}
             <div>
               <div className="mb-4">
                 <Image
-                  src="/images/Secondary_Mass_Timber_Logo.PNG"
-                  alt="Impact Mass Timber"
-                  width={180}
-                  height={60}
-                  className="h-14 w-auto"
+                  src="/images/Main_Mass_Timber_Logo.PNG"
+                  alt="Ironworkers Mass Timber"
+                  width={80}
+                  height={80}
+                  className="h-20 w-20 rounded-full"
                 />
               </div>
               <p className="text-cream/60 text-sm leading-relaxed mb-6">{SITE_TAGLINE}</p>

@@ -6,7 +6,11 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/motion
 import locationsData from '@/data/locations.json';
 import type { LocationCardType } from '@/types';
 
-export function ContactPreview() {
+interface ContactPreviewProps {
+  showCta?: boolean;
+}
+
+export function ContactPreview({ showCta = true }: ContactPreviewProps) {
   const locations = locationsData as LocationCardType[];
 
   return (
@@ -22,13 +26,15 @@ export function ContactPreview() {
             </StaggerItem>
           ))}
         </StaggerContainer>
-        <ScrollReveal delay={0.3}>
-          <div className="text-center mt-10">
-            <Button variant="primary" size="lg" href="/contact">
-              Get in Touch
-            </Button>
-          </div>
-        </ScrollReveal>
+        {showCta && (
+          <ScrollReveal delay={0.3}>
+            <div className="text-center mt-10">
+              <Button variant="primary" size="lg" href="/contact">
+                Get in Touch
+              </Button>
+            </div>
+          </ScrollReveal>
+        )}
       </Container>
     </section>
   );

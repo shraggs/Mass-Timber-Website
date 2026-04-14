@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { PartnerLogos } from '@/components/sections/PartnerLogos';
+import { ContactPreview } from '@/components/sections/ContactPreview';
 import { slideshowImages } from '@/data/slideshow-images';
 import { CONTACT_EMAIL, CONTACT_PHONE, BUSINESS_HOURS } from '@/lib/constants';
 
@@ -22,6 +23,8 @@ export default function ContactPage() {
         images={slideshowImages.contact}
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Contact' }]}
       />
+
+      <ContactPreview showCta={false} />
 
       <section className="py-16 md:py-24">
         <Container>
