@@ -10,6 +10,7 @@ import { NetworkSection } from '@/components/sections/NetworkSection';
 import { TeamPreview } from '@/components/sections/TeamPreview';
 import { TestimonialSlider } from '@/components/sections/TestimonialSlider';
 import { ProjectsOfTheYear } from '@/components/sections/ProjectsOfTheYear';
+import { ComparisonSection } from '@/components/sections/ComparisonSection';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Button } from '@/components/ui/Button';
 
@@ -93,6 +94,7 @@ export default function AboutPage() {
       </section>
 
       <TeamPreview />
+      <ComparisonSection />
       <TestimonialSlider />
       <ProjectsOfTheYear />
     </>

@@ -36,7 +36,7 @@ export function Footer() {
         aria-hidden="true"
         width={320}
         height={320}
-        className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/4 w-[260px] h-[260px] xl:w-[320px] xl:h-[320px] opacity-[0.06] pointer-events-none select-none"
+        className="hidden lg:block absolute left-6 xl:left-10 top-1/2 -translate-y-1/2 w-[220px] h-[220px] xl:w-[280px] xl:h-[280px] opacity-[0.18] pointer-events-none select-none"
       />
       <Container>
         <ScrollReveal>

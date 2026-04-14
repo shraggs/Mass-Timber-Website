@@ -4,7 +4,6 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { GradientOrb } from '@/components/ui/GradientOrb';
 import { PageBanner } from '@/components/layout/PageBanner';
 import { ProcessTimeline } from '@/components/sections/ProcessTimeline';
-import { ComparisonSection } from '@/components/sections/ComparisonSection';
 import { slideshowImages } from '@/data/slideshow-images';
 
 export const metadata = {
@@ -77,7 +76,6 @@ export default function WhatIsMassTimberPage() {
       </section>
 
       <ProcessTimeline />
-      <ComparisonSection />
     </>
   );
 }
