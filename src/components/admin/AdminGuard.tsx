@@ -9,19 +9,24 @@ export function AdminGuard({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Don't guard the login page itself
     if (pathname === '/admin/login') {
       setChecked(true);
       return;
     }
 
-    // Check if admin-token cookie exists (client-side check — server also verifies)
-    const hasToken = document.cookie.includes('admin-token=');
-    if (!hasToken) {
-      router.replace('/admin/login');
-    } else {
-      setChecked(true);
-    }
+    // Verify auth via server-side API call (httpOnly cookies aren't visible to JS)
+    fetch('/api/admin/check')
+      .then(res => res.json())
+      .then(data => {
+        if (data.authenticated) {
+          setChecked(true);
+        } else {
+          router.replace('/admin/login');
+        }
+      })
+      .catch(() => {
+        router.replace('/admin/login');
+      });
   }, [pathname, router]);
 
   if (!checked && pathname !== '/admin/login') {
