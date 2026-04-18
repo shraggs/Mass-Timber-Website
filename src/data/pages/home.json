@@ -1,0 +1,13 @@
+{
+  "slug": "home",
+  "title": "Home",
+  "metadata": {
+    "title": "IW Mass Timber",
+    "description": "Expert Fabrication for Mass Timber Construction. Built on Ironworker Precision."
+  },
+  "sections": [
+    { "id": "home-hero", "type": "HeroSection", "props": {}, "enabled": true },
+    { "id": "home-stats", "type": "StatsBar", "props": {}, "enabled": true },
+    { "id": "home-featured", "type": "FeaturedProjects", "props": {}, "enabled": true }
+  ]
+}

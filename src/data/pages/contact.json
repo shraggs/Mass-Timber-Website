@@ -1,0 +1,25 @@
+{
+  "slug": "contact",
+  "title": "Contact",
+  "metadata": {
+    "title": "Contact",
+    "description": "Get in touch with IW Mass Timber. Schedule a meeting or ask about mass timber construction services."
+  },
+  "sections": [
+    {
+      "id": "contact-banner",
+      "type": "PageBanner",
+      "props": {
+        "title": "Contact Us",
+        "subtitle": "Get in touch with our mass timber experts",
+        "backgroundImage": "/images/rotated-contact.jpeg",
+        "slideshowKey": "contact",
+        "breadcrumbs": [{ "label": "Home", "href": "/" }, { "label": "Contact" }]
+      },
+      "enabled": true
+    },
+    { "id": "contact-locations", "type": "ContactPreview", "props": { "showCta": false }, "enabled": true },
+    { "id": "contact-info", "type": "ContactInfoSection", "props": {}, "enabled": true },
+    { "id": "contact-partners", "type": "PartnerLogos", "props": {}, "enabled": true }
+  ]
+}

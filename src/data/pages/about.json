@@ -1,0 +1,31 @@
+{
+  "slug": "about",
+  "title": "About Us",
+  "metadata": {
+    "title": "About Us",
+    "description": "Learn about the International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers and their expertise in mass timber construction."
+  },
+  "sections": [
+    {
+      "id": "about-banner",
+      "type": "PageBanner",
+      "props": {
+        "title": "About Us",
+        "subtitle": "Building the future with Ironworker precision",
+        "backgroundImage": "/images/about-hero.jpg",
+        "slideshowKey": "about",
+        "breadcrumbs": [{ "label": "Home", "href": "/" }, { "label": "Who we are" }]
+      },
+      "enabled": true
+    },
+    { "id": "about-union", "type": "AboutUnionSection", "props": {}, "enabled": true },
+    { "id": "about-stats", "type": "StatsSection", "props": {}, "enabled": true },
+    { "id": "about-partners", "type": "PartnerLogos", "props": {}, "enabled": true },
+    { "id": "about-network", "type": "NetworkSection", "props": {}, "enabled": true },
+    { "id": "about-projects", "type": "AboutFeaturedProjects", "props": {}, "enabled": true },
+    { "id": "about-team", "type": "TeamPreview", "props": {}, "enabled": true },
+    { "id": "about-comparison", "type": "ComparisonSection", "props": {}, "enabled": true },
+    { "id": "about-testimonials", "type": "TestimonialSlider", "props": {}, "enabled": true },
+    { "id": "about-poty", "type": "ProjectsOfTheYear", "props": {}, "enabled": true }
+  ]
+}

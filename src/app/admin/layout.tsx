@@ -6,11 +6,12 @@ import Image from 'next/image';
 import { AdminGuard } from '@/components/admin/AdminGuard';
 import {
   Users, MapPin, Building2, GraduationCap, Package, MessageCircle,
-  HelpCircle, Settings, LayoutDashboard, LogOut, ChevronRight, FileText
+  HelpCircle, Settings, LayoutDashboard, LogOut, ChevronRight, FileText, LayoutGrid
 } from 'lucide-react';
 
 const sidebarItems = [
   { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+  { label: 'Page Builder', href: '/admin/pages', icon: LayoutGrid },
   { label: 'Leadership', href: '/admin/leadership', icon: Users },
   { label: 'Contractors', href: '/admin/contractors', icon: Building2 },
   { label: 'Projects', href: '/admin/projects', icon: FileText },

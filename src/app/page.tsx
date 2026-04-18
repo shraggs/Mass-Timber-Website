@@ -1,13 +1,7 @@
-import { HeroSection } from '@/components/sections/HeroSection';
-import { StatsBar } from '@/components/sections/StatsBar';
-import { FeaturedProjects } from '@/components/sections/FeaturedProjects';
+import { PageRenderer } from '@/components/page-builder/PageRenderer';
+import homeConfig from '@/data/pages/home.json';
+import type { PageConfig } from '@/types/page-builder';
 
 export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <StatsBar />
-      <FeaturedProjects />
-    </>
-  );
+  return <PageRenderer config={homeConfig as PageConfig} />;
 }
