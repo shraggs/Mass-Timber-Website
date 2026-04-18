@@ -1,0 +1,23 @@
+{
+  "slug": "suppliers",
+  "title": "Suppliers",
+  "metadata": {
+    "title": "Mass Timber Suppliers",
+    "description": "Find mass timber suppliers and manufacturers for your construction projects."
+  },
+  "sections": [
+    {
+      "id": "suppliers-banner",
+      "type": "PageBanner",
+      "props": {
+        "title": "Mass Timber Suppliers",
+        "subtitle": "The professionals who turn your sustainable vision into reality.",
+        "backgroundImage": "/images/connector-detail.png",
+        "slideshowKey": "suppliers",
+        "breadcrumbs": [{ "label": "Home", "href": "/" }, { "label": "Suppliers & Manufacturers" }]
+      },
+      "enabled": true
+    },
+    { "id": "suppliers-directory", "type": "SuppliersDirectory", "props": {}, "enabled": true }
+  ]
+}

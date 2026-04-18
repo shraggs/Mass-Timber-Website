@@ -1,0 +1,23 @@
+{
+  "slug": "projects",
+  "title": "Projects",
+  "metadata": {
+    "title": "Our Projects",
+    "description": "Explore mass timber construction projects built with Ironworker precision."
+  },
+  "sections": [
+    {
+      "id": "projects-banner",
+      "type": "PageBanner",
+      "props": {
+        "title": "Our Projects",
+        "subtitle": "Your vision, transformed into timeless timber structures.",
+        "backgroundImage": "/images/rotated-projects.jpeg",
+        "slideshowKey": "projects",
+        "breadcrumbs": [{ "label": "Home", "href": "/" }, { "label": "Projects" }]
+      },
+      "enabled": true
+    },
+    { "id": "projects-directory", "type": "ProjectsDirectory", "props": {}, "enabled": true }
+  ]
+}

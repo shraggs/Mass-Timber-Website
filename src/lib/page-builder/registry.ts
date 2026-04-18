@@ -25,6 +25,14 @@ import { ContactForm } from '@/components/forms/ContactForm';
 import { AboutUnionSection } from '@/components/sections/AboutUnionSection';
 import { AboutFeaturedProjects } from '@/components/sections/AboutFeaturedProjects';
 import { ContactInfoSection } from '@/components/sections/ContactInfoSection';
+import { ProjectsDirectory } from '@/components/sections/ProjectsDirectory';
+import { ContractorsDirectory } from '@/components/sections/ContractorsDirectory';
+import { SuppliersDirectory } from '@/components/sections/SuppliersDirectory';
+import { FAQWithChat } from '@/components/sections/FAQWithChat';
+import { SafetyIntro } from '@/components/sections/SafetyIntro';
+import { SafetyPillars } from '@/components/sections/SafetyPillars';
+import { SafetyCTA } from '@/components/sections/SafetyCTA';
+import { TrainingLinks } from '@/components/sections/TrainingLinks';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyComponent = ComponentType<any>;
@@ -53,6 +61,14 @@ export const blockComponents: Record<string, AnyComponent> = {
   WhatIsMassTimber,
   AboutUnionSection,
   AboutFeaturedProjects,
+  ProjectsDirectory,
+  ContractorsDirectory,
+  SuppliersDirectory,
+  FAQWithChat,
+  SafetyIntro,
+  SafetyPillars,
+  SafetyCTA,
+  TrainingLinks,
 };
 
 // Block metadata: labels, icons, categories, configurable fields
@@ -213,6 +229,62 @@ export const blockDefinitions: Record<string, BlockDefinition> = {
   AboutFeaturedProjects: {
     label: 'Featured Projects Grid',
     icon: 'LayoutGrid',
+    category: 'content',
+    fields: [],
+    defaultProps: {},
+  },
+  ProjectsDirectory: {
+    label: 'Projects Directory',
+    icon: 'Briefcase',
+    category: 'data',
+    fields: [],
+    defaultProps: {},
+  },
+  ContractorsDirectory: {
+    label: 'Contractors Directory',
+    icon: 'Building2',
+    category: 'data',
+    fields: [],
+    defaultProps: {},
+  },
+  SuppliersDirectory: {
+    label: 'Suppliers Directory',
+    icon: 'Package',
+    category: 'data',
+    fields: [],
+    defaultProps: {},
+  },
+  FAQWithChat: {
+    label: 'FAQ + AI Chat',
+    icon: 'HelpCircle',
+    category: 'content',
+    fields: [],
+    defaultProps: {},
+  },
+  SafetyIntro: {
+    label: 'Safety Intro',
+    icon: 'Shield',
+    category: 'content',
+    fields: [],
+    defaultProps: {},
+  },
+  SafetyPillars: {
+    label: 'Safety Pillars Grid',
+    icon: 'Shield',
+    category: 'content',
+    fields: [],
+    defaultProps: {},
+  },
+  SafetyCTA: {
+    label: 'Safety CTA',
+    icon: 'Megaphone',
+    category: 'cta',
+    fields: [],
+    defaultProps: {},
+  },
+  TrainingLinks: {
+    label: 'Training Links Grid',
+    icon: 'GraduationCap',
     category: 'content',
     fields: [],
     defaultProps: {},

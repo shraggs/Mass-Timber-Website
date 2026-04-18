@@ -1,0 +1,23 @@
+{
+  "slug": "contractors",
+  "title": "Contractors",
+  "metadata": {
+    "title": "Mass Timber Contractors",
+    "description": "Find certified mass timber contractors backed by Ironworker training and expertise."
+  },
+  "sections": [
+    {
+      "id": "contractors-banner",
+      "type": "PageBanner",
+      "props": {
+        "title": "Mass Timber Contractors",
+        "subtitle": "The professionals who turn your sustainable vision into reality.",
+        "backgroundImage": "/images/workers-installing.png",
+        "slideshowKey": "contractors",
+        "breadcrumbs": [{ "label": "Home", "href": "/" }, { "label": "Contractors" }]
+      },
+      "enabled": true
+    },
+    { "id": "contractors-directory", "type": "ContractorsDirectory", "props": {}, "enabled": true }
+  ]
+}

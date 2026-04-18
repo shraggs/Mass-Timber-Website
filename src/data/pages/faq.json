@@ -1,0 +1,23 @@
+{
+  "slug": "faq",
+  "title": "FAQ",
+  "metadata": {
+    "title": "FAQ",
+    "description": "Frequently asked questions about mass timber construction and Ironworker services."
+  },
+  "sections": [
+    {
+      "id": "faq-banner",
+      "type": "PageBanner",
+      "props": {
+        "title": "FAQ",
+        "subtitle": "Frequently asked questions & AI assistant",
+        "backgroundImage": "/images/hero-interior.png",
+        "slideshowKey": "faq",
+        "breadcrumbs": [{ "label": "Home", "href": "/" }, { "label": "FAQ" }]
+      },
+      "enabled": true
+    },
+    { "id": "faq-content", "type": "FAQWithChat", "props": {}, "enabled": true }
+  ]
+}

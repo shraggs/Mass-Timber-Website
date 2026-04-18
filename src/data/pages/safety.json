@@ -1,0 +1,25 @@
+{
+  "slug": "safety",
+  "title": "Safety",
+  "metadata": {
+    "title": "Safety",
+    "description": "Iron Workers bring proven safety and performance to mass timber construction through specialized training, fall protection expertise, and OSHA-certified workforce standards."
+  },
+  "sections": [
+    {
+      "id": "safety-banner",
+      "type": "PageBanner",
+      "props": {
+        "title": "Safety",
+        "subtitle": "Proven safety & performance in mass timber construction",
+        "backgroundImage": "/images/safety-1.jpeg",
+        "slideshowKey": "safety",
+        "breadcrumbs": [{ "label": "Home", "href": "/" }, { "label": "Safety" }]
+      },
+      "enabled": true
+    },
+    { "id": "safety-intro", "type": "SafetyIntro", "props": {}, "enabled": true },
+    { "id": "safety-pillars", "type": "SafetyPillars", "props": {}, "enabled": true },
+    { "id": "safety-cta", "type": "SafetyCTA", "props": {}, "enabled": true }
+  ]
+}

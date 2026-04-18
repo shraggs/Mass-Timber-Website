@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import {
   DndContext,
   closestCenter,
@@ -241,17 +242,21 @@ export function PageBuilderEditor({ initialConfig, slug }: PageBuilderEditorProp
         )}
       </div>
 
-      {/* Preview modal */}
-      {showPreview && (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+      {/* Preview modal - rendered via portal to escape admin layout scroll container */}
+      {showPreview && typeof document !== 'undefined' && createPortal(
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center p-4"
+          style={{ zIndex: 99999 }}
+          onClick={(e) => { if (e.target === e.currentTarget) setShowPreview(false); }}
+        >
           <div className="bg-[#0f1f17] rounded-xl border border-white/10 w-full max-w-6xl h-[85vh] flex flex-col">
             <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.06]">
               <span className="text-sm text-cream font-semibold">Preview: {config.title}</span>
               <button
                 onClick={() => setShowPreview(false)}
-                className="px-3 py-1.5 rounded-lg text-sm text-cream/60 hover:text-cream hover:bg-white/5"
+                className="px-3 py-1.5 rounded-lg text-sm font-semibold text-charcoal-950 bg-amber-500 hover:bg-amber-400 transition-colors"
               >
-                Close
+                Close Preview
               </button>
             </div>
             <div className="flex-1 overflow-hidden">
@@ -262,7 +267,8 @@ export function PageBuilderEditor({ initialConfig, slug }: PageBuilderEditorProp
               />
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

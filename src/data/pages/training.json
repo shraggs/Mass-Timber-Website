@@ -1,0 +1,23 @@
+{
+  "slug": "training",
+  "title": "Training",
+  "metadata": {
+    "title": "Training",
+    "description": "Explore mass timber training programs for Ironworkers, contractors, and members."
+  },
+  "sections": [
+    {
+      "id": "training-banner",
+      "type": "PageBanner",
+      "props": {
+        "title": "Training",
+        "subtitle": "Building expertise in mass timber construction",
+        "backgroundImage": "/images/rotated-training.jpeg",
+        "slideshowKey": "training",
+        "breadcrumbs": [{ "label": "Home", "href": "/" }, { "label": "Training" }]
+      },
+      "enabled": true
+    },
+    { "id": "training-links", "type": "TrainingLinks", "props": {}, "enabled": true }
+  ]
+}
