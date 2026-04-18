@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import { isAuthenticated } from '@/lib/admin-auth';
-import { readFile, writeFile, uploadImage } from '@/lib/github';
+import { writeFile, uploadImage } from '@/lib/github';
 
 export async function GET(request: Request) {
   if (!(await isAuthenticated())) {
@@ -15,10 +17,12 @@ export async function GET(request: Request) {
   }
 
   try {
-    const { content } = await readFile(file);
+    // Read directly from the local file system (files are part of the build)
+    const filePath = join(process.cwd(), file);
+    const content = readFileSync(filePath, 'utf-8');
     return NextResponse.json({ content });
   } catch (err) {
-    return NextResponse.json({ error: String(err) }, { status: 500 });
+    return NextResponse.json({ error: `Failed to read ${file}: ${String(err)}` }, { status: 500 });
   }
 }
 
