@@ -33,6 +33,12 @@ import { SafetyIntro } from '@/components/sections/SafetyIntro';
 import { SafetyPillars } from '@/components/sections/SafetyPillars';
 import { SafetyCTA } from '@/components/sections/SafetyCTA';
 import { TrainingLinks } from '@/components/sections/TrainingLinks';
+import { RichTextSection } from '@/components/sections/RichTextSection';
+import { ImageSection } from '@/components/sections/ImageSection';
+import { TwoColumnSection } from '@/components/sections/TwoColumnSection';
+import { CustomCardGrid } from '@/components/sections/CustomCardGrid';
+import { CustomCTA } from '@/components/sections/CustomCTA';
+import { SpacerSection } from '@/components/sections/SpacerSection';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyComponent = ComponentType<any>;
@@ -69,6 +75,12 @@ export const blockComponents: Record<string, AnyComponent> = {
   SafetyPillars,
   SafetyCTA,
   TrainingLinks,
+  RichTextSection,
+  ImageSection,
+  TwoColumnSection,
+  CustomCardGrid,
+  CustomCTA,
+  SpacerSection,
 };
 
 // Block metadata: labels, icons, categories, configurable fields
@@ -288,5 +300,87 @@ export const blockDefinitions: Record<string, BlockDefinition> = {
     category: 'content',
     fields: [],
     defaultProps: {},
+  },
+  RichTextSection: {
+    label: 'Text Section',
+    icon: 'Type',
+    category: 'content',
+    fields: [
+      { key: 'eyebrow', label: 'Eyebrow Text', type: 'text', placeholder: 'e.g. Our Story' },
+      { key: 'title', label: 'Heading', type: 'text', required: true },
+      { key: 'subtitle', label: 'Subtitle', type: 'text' },
+      { key: 'body', label: 'Body Text', type: 'textarea', placeholder: 'Use blank lines between paragraphs' },
+      { key: 'align', label: 'Alignment', type: 'select', options: ['left', 'center'] },
+      { key: 'darkBackground', label: 'Dark Background', type: 'boolean' },
+    ],
+    defaultProps: { title: 'Section Title', body: '', align: 'left', darkBackground: false },
+  },
+  ImageSection: {
+    label: 'Image',
+    icon: 'ImageIcon',
+    category: 'content',
+    fields: [
+      { key: 'src', label: 'Image Path', type: 'text', required: true, placeholder: '/images/filename.jpg' },
+      { key: 'alt', label: 'Alt Text', type: 'text', required: true },
+      { key: 'caption', label: 'Caption', type: 'text' },
+      { key: 'height', label: 'Height (px)', type: 'number' },
+      { key: 'fullWidth', label: 'Full Width (edge to edge)', type: 'boolean' },
+    ],
+    defaultProps: { src: '/images/hero-interior.png', alt: 'Image', height: '400', fullWidth: false },
+  },
+  TwoColumnSection: {
+    label: 'Text + Image',
+    icon: 'Columns2',
+    category: 'content',
+    fields: [
+      { key: 'eyebrow', label: 'Eyebrow Text', type: 'text' },
+      { key: 'title', label: 'Heading', type: 'text', required: true },
+      { key: 'body', label: 'Body Text', type: 'textarea', placeholder: 'Use blank lines between paragraphs' },
+      { key: 'imageSrc', label: 'Image Path', type: 'text', required: true, placeholder: '/images/filename.jpg' },
+      { key: 'imageAlt', label: 'Image Alt Text', type: 'text' },
+      { key: 'imagePosition', label: 'Image Position', type: 'select', options: ['left', 'right'] },
+      { key: 'darkBackground', label: 'Dark Background', type: 'boolean' },
+    ],
+    defaultProps: { title: 'Section Title', body: '', imageSrc: '/images/hero-interior.png', imageAlt: 'Image', imagePosition: 'right', darkBackground: false },
+  },
+  CustomCardGrid: {
+    label: 'Card Grid',
+    icon: 'LayoutGrid',
+    category: 'content',
+    fields: [
+      { key: 'eyebrow', label: 'Eyebrow Text', type: 'text' },
+      { key: 'title', label: 'Heading', type: 'text', required: true },
+      { key: 'subtitle', label: 'Subtitle', type: 'text' },
+      { key: 'cards', label: 'Cards (Title|Description per line)', type: 'textarea', placeholder: 'Card Title|Card description\nAnother Card|Another description' },
+      { key: 'columns', label: 'Columns', type: 'select', options: ['2', '3', '4'] },
+      { key: 'darkBackground', label: 'Dark Background', type: 'boolean' },
+    ],
+    defaultProps: { title: 'Section Title', cards: 'Card One|Description for card one\nCard Two|Description for card two\nCard Three|Description for card three', columns: '3', darkBackground: false },
+  },
+  CustomCTA: {
+    label: 'Custom CTA',
+    icon: 'Megaphone',
+    category: 'cta',
+    fields: [
+      { key: 'heading', label: 'Heading', type: 'text', required: true },
+      { key: 'body', label: 'Body Text', type: 'text' },
+      { key: 'primaryButtonText', label: 'Primary Button Text', type: 'text' },
+      { key: 'primaryButtonHref', label: 'Primary Button Link', type: 'text', placeholder: '/contact' },
+      { key: 'secondaryButtonText', label: 'Secondary Button Text', type: 'text' },
+      { key: 'secondaryButtonHref', label: 'Secondary Button Link', type: 'text' },
+      { key: 'darkBackground', label: 'Dark Background', type: 'boolean' },
+    ],
+    defaultProps: { heading: 'Ready to Get Started?', body: 'Connect with our team to learn more.', primaryButtonText: 'Contact Us', primaryButtonHref: '/contact', darkBackground: false },
+  },
+  SpacerSection: {
+    label: 'Spacer / Divider',
+    icon: 'Minus',
+    category: 'content',
+    fields: [
+      { key: 'height', label: 'Height (px)', type: 'number' },
+      { key: 'showDivider', label: 'Show Divider Line', type: 'boolean' },
+      { key: 'darkBackground', label: 'Dark Background', type: 'boolean' },
+    ],
+    defaultProps: { height: '64', showDivider: false, darkBackground: false },
   },
 };
