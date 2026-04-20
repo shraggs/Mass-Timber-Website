@@ -1,0 +1,20 @@
+{
+  "slug": "test-page",
+  "title": "Test Page",
+  "metadata": {
+    "title": "Test Page",
+    "description": "Setting up"
+  },
+  "sections": [
+    {
+      "id": "test-page-banner",
+      "type": "PageBanner",
+      "props": {
+        "title": "Test Page",
+        "subtitle": "Setting up",
+        "backgroundImage": "/images/hero-interior.png"
+      },
+      "enabled": true
+    }
+  ]
+}
