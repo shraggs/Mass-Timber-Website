@@ -39,6 +39,11 @@ import { TwoColumnSection } from '@/components/sections/TwoColumnSection';
 import { CustomCardGrid } from '@/components/sections/CustomCardGrid';
 import { CustomCTA } from '@/components/sections/CustomCTA';
 import { SpacerSection } from '@/components/sections/SpacerSection';
+import { HeadingBlock } from '@/components/sections/HeadingBlock';
+import { ButtonBlock } from '@/components/sections/ButtonBlock';
+import { VideoBlock } from '@/components/sections/VideoBlock';
+import { QuoteBlock } from '@/components/sections/QuoteBlock';
+import { DividerBlock } from '@/components/sections/DividerBlock';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyComponent = ComponentType<any>;
@@ -81,6 +86,11 @@ export const blockComponents: Record<string, AnyComponent> = {
   CustomCardGrid,
   CustomCTA,
   SpacerSection,
+  HeadingBlock,
+  ButtonBlock,
+  VideoBlock,
+  QuoteBlock,
+  DividerBlock,
 };
 
 // Block metadata: labels, icons, categories, configurable fields
@@ -304,7 +314,8 @@ export const blockDefinitions: Record<string, BlockDefinition> = {
   RichTextSection: {
     label: 'Text Section',
     icon: 'Type',
-    category: 'content',
+    category: 'custom',
+    description: 'Heading, subtitle and paragraphs of body copy.',
     fields: [
       { key: 'eyebrow', label: 'Eyebrow Text', type: 'text', placeholder: 'e.g. Our Story' },
       { key: 'title', label: 'Heading', type: 'text', required: true },
@@ -318,7 +329,8 @@ export const blockDefinitions: Record<string, BlockDefinition> = {
   ImageSection: {
     label: 'Image',
     icon: 'ImageIcon',
-    category: 'content',
+    category: 'custom',
+    description: 'Standalone image with optional caption.',
     fields: [
       { key: 'src', label: 'Image Path', type: 'text', required: true, placeholder: '/images/filename.jpg' },
       { key: 'alt', label: 'Alt Text', type: 'text', required: true },
@@ -331,7 +343,8 @@ export const blockDefinitions: Record<string, BlockDefinition> = {
   TwoColumnSection: {
     label: 'Text + Image',
     icon: 'Columns2',
-    category: 'content',
+    category: 'custom',
+    description: 'Two-column layout pairing body text with an image.',
     fields: [
       { key: 'eyebrow', label: 'Eyebrow Text', type: 'text' },
       { key: 'title', label: 'Heading', type: 'text', required: true },
@@ -346,7 +359,8 @@ export const blockDefinitions: Record<string, BlockDefinition> = {
   CustomCardGrid: {
     label: 'Card Grid',
     icon: 'LayoutGrid',
-    category: 'content',
+    category: 'custom',
+    description: 'Grid of titled cards with descriptions.',
     fields: [
       { key: 'eyebrow', label: 'Eyebrow Text', type: 'text' },
       { key: 'title', label: 'Heading', type: 'text', required: true },
@@ -360,7 +374,8 @@ export const blockDefinitions: Record<string, BlockDefinition> = {
   CustomCTA: {
     label: 'Custom CTA',
     icon: 'Megaphone',
-    category: 'cta',
+    category: 'custom',
+    description: 'Headline, body, and up to two buttons.',
     fields: [
       { key: 'heading', label: 'Heading', type: 'text', required: true },
       { key: 'body', label: 'Body Text', type: 'text' },
@@ -373,14 +388,86 @@ export const blockDefinitions: Record<string, BlockDefinition> = {
     defaultProps: { heading: 'Ready to Get Started?', body: 'Connect with our team to learn more.', primaryButtonText: 'Contact Us', primaryButtonHref: '/contact', darkBackground: false },
   },
   SpacerSection: {
-    label: 'Spacer / Divider',
+    label: 'Spacer',
     icon: 'Minus',
-    category: 'content',
+    category: 'custom',
+    description: 'Blank vertical space between sections.',
     fields: [
       { key: 'height', label: 'Height (px)', type: 'number' },
       { key: 'showDivider', label: 'Show Divider Line', type: 'boolean' },
       { key: 'darkBackground', label: 'Dark Background', type: 'boolean' },
     ],
     defaultProps: { height: '64', showDivider: false, darkBackground: false },
+  },
+  HeadingBlock: {
+    label: 'Heading',
+    icon: 'Heading',
+    category: 'custom',
+    description: 'Standalone heading — H1/H2/H3/H4 with optional eyebrow.',
+    fields: [
+      { key: 'eyebrow', label: 'Eyebrow', type: 'text', placeholder: 'e.g. Introducing' },
+      { key: 'text', label: 'Heading Text', type: 'text', required: true },
+      { key: 'level', label: 'Heading Level', type: 'select', options: ['h1', 'h2', 'h3', 'h4'] },
+      { key: 'align', label: 'Alignment', type: 'select', options: ['left', 'center', 'right'] },
+      { key: 'underline', label: 'Show Underline Accent', type: 'boolean' },
+      { key: 'darkBackground', label: 'Dark Background', type: 'boolean' },
+    ],
+    defaultProps: { text: 'Heading', level: 'h2', align: 'left', underline: false, darkBackground: false },
+  },
+  ButtonBlock: {
+    label: 'Button',
+    icon: 'MousePointerClick',
+    category: 'custom',
+    description: 'A single call-to-action button.',
+    fields: [
+      { key: 'text', label: 'Button Text', type: 'text', required: true },
+      { key: 'href', label: 'Link URL', type: 'text', required: true, placeholder: '/contact or https://...' },
+      { key: 'variant', label: 'Style', type: 'select', options: ['primary', 'outline'] },
+      { key: 'align', label: 'Alignment', type: 'select', options: ['left', 'center', 'right'] },
+      { key: 'openInNewTab', label: 'Open in New Tab', type: 'boolean' },
+      { key: 'darkBackground', label: 'Dark Background', type: 'boolean' },
+    ],
+    defaultProps: { text: 'Learn More', href: '#', variant: 'primary', align: 'center', openInNewTab: false, darkBackground: false },
+  },
+  VideoBlock: {
+    label: 'Video',
+    icon: 'Video',
+    category: 'custom',
+    description: 'Embed a YouTube, Vimeo, or direct video file.',
+    fields: [
+      { key: 'url', label: 'Video URL', type: 'text', required: true, placeholder: 'YouTube, Vimeo, or .mp4 URL' },
+      { key: 'caption', label: 'Caption', type: 'text' },
+      { key: 'aspectRatio', label: 'Aspect Ratio', type: 'select', options: ['16:9', '4:3', '1:1'] },
+      { key: 'fullWidth', label: 'Full Width (edge to edge)', type: 'boolean' },
+      { key: 'darkBackground', label: 'Dark Background', type: 'boolean' },
+    ],
+    defaultProps: { url: '', aspectRatio: '16:9', fullWidth: false, darkBackground: false },
+  },
+  QuoteBlock: {
+    label: 'Quote',
+    icon: 'Quote',
+    category: 'custom',
+    description: 'A featured pull-quote or testimonial.',
+    fields: [
+      { key: 'quote', label: 'Quote Text', type: 'textarea', required: true },
+      { key: 'attribution', label: 'Attribution (Name)', type: 'text' },
+      { key: 'role', label: 'Role / Company', type: 'text' },
+      { key: 'align', label: 'Alignment', type: 'select', options: ['left', 'center'] },
+      { key: 'darkBackground', label: 'Dark Background', type: 'boolean' },
+    ],
+    defaultProps: { quote: 'A powerful quote goes here.', align: 'center', darkBackground: false },
+  },
+  DividerBlock: {
+    label: 'Divider',
+    icon: 'Minus',
+    category: 'custom',
+    description: 'Horizontal divider (line, dots, dashes, or wave).',
+    fields: [
+      { key: 'style', label: 'Style', type: 'select', options: ['line', 'dots', 'dashes', 'wave'] },
+      { key: 'spacing', label: 'Spacing', type: 'select', options: ['sm', 'md', 'lg'] },
+      { key: 'label', label: 'Optional Label', type: 'text', placeholder: 'e.g. OR' },
+      { key: 'darkBackground', label: 'Dark Background', type: 'boolean' },
+    ],
+    defaultProps: { style: 'line', spacing: 'md', darkBackground: false },
   },
 };

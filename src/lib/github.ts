@@ -59,6 +59,32 @@ export async function writeFile(filePath: string, content: string, message: stri
   }
 }
 
+export async function deleteFile(filePath: string, message: string): Promise<void> {
+  const fullPath = `${BASE_PATH}/${filePath}`;
+
+  let sha: string;
+  try {
+    const current = await readFile(filePath);
+    sha = current.sha;
+  } catch {
+    return;
+  }
+
+  const res = await fetch(
+    `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${fullPath}`,
+    {
+      method: 'DELETE',
+      headers: getHeaders(),
+      body: JSON.stringify({ message, sha, branch: BRANCH }),
+    }
+  );
+
+  if (!res.ok) {
+    const errorText = await res.text();
+    throw new Error(`Failed to delete ${fullPath}: ${res.status} ${errorText}`);
+  }
+}
+
 export async function uploadImage(filePath: string, base64Data: string, message: string): Promise<string> {
   const fullPath = `${BASE_PATH}/public/${filePath}`;
 

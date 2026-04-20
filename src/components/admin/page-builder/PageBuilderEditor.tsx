@@ -17,7 +17,7 @@ import {
   verticalListSortingStrategy,
   arrayMove,
 } from '@dnd-kit/sortable';
-import { Save, RotateCcw, Eye, Loader2, ArrowLeft } from 'lucide-react';
+import { Save, RotateCcw, Eye, Loader2, ArrowLeft, Settings, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import type { PageConfig, SectionConfig } from '@/types/page-builder';
 import { blockDefinitions } from '@/lib/page-builder/registry';
@@ -44,6 +44,7 @@ export function PageBuilderEditor({ initialConfig, slug }: PageBuilderEditorProp
   const [error, setError] = useState<string | null>(null);
   const [hasChanges, setHasChanges] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -52,6 +53,16 @@ export function PageBuilderEditor({ initialConfig, slug }: PageBuilderEditorProp
 
   const updateSections = useCallback((sections: SectionConfig[]) => {
     setConfig((prev) => ({ ...prev, sections }));
+    setHasChanges(true);
+    setSaved(false);
+  }, []);
+
+  const updateMetadata = useCallback((updates: Partial<PageConfig> & { metadata?: PageConfig['metadata'] }) => {
+    setConfig((prev) => ({
+      ...prev,
+      ...updates,
+      metadata: { ...prev.metadata, ...(updates.metadata || {}) },
+    }));
     setHasChanges(true);
     setSaved(false);
   }, []);
@@ -156,6 +167,25 @@ export function PageBuilderEditor({ initialConfig, slug }: PageBuilderEditorProp
         </div>
 
         <div className="flex items-center gap-2">
+          <a
+            href={`/${slug === 'home' ? '' : slug}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-cream/60 hover:text-cream hover:bg-white/5 transition-colors"
+            title="Open live page in new tab"
+          >
+            <ExternalLink className="w-4 h-4" />
+            View Live
+          </a>
+
+          <button
+            onClick={() => setShowSettings(true)}
+            className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-cream/60 hover:text-cream hover:bg-white/5 transition-colors"
+          >
+            <Settings className="w-4 h-4" />
+            Settings
+          </button>
+
           <button
             onClick={handlePreview}
             className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-cream/60 hover:text-cream hover:bg-white/5 transition-colors"
@@ -241,6 +271,67 @@ export function PageBuilderEditor({ initialConfig, slug }: PageBuilderEditorProp
           </div>
         )}
       </div>
+
+      {/* Page settings modal */}
+      {showSettings && typeof document !== 'undefined' && createPortal(
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center p-4"
+          style={{ zIndex: 99999 }}
+          onClick={(e) => { if (e.target === e.currentTarget) setShowSettings(false); }}
+        >
+          <div className="bg-[#1E3A2A] border border-white/10 rounded-xl w-full max-w-lg">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-white/[0.06]">
+              <div>
+                <h2 className="font-bold text-cream font-[family-name:var(--font-jakarta)]">Page Settings</h2>
+                <p className="text-xs text-cream/40 mt-0.5">Metadata and SEO for this page.</p>
+              </div>
+              <button
+                onClick={() => setShowSettings(false)}
+                className="px-3 py-1.5 rounded-lg text-sm font-semibold text-charcoal-950 bg-amber-500 hover:bg-amber-400 transition-colors"
+              >
+                Done
+              </button>
+            </div>
+            <div className="p-5 space-y-4">
+              <div>
+                <label className="block text-xs text-cream/40 mb-1.5">Page Title (shown in admin)</label>
+                <input
+                  type="text"
+                  value={config.title}
+                  onChange={(e) => updateMetadata({ title: e.target.value })}
+                  className="w-full px-3 py-2 bg-charcoal-950/50 border border-white/10 rounded-lg text-cream text-sm focus:outline-none focus:border-amber-500"
+                />
+              </div>
+              <div>
+                <label className="block text-xs text-cream/40 mb-1.5">Browser Tab Title (SEO)</label>
+                <input
+                  type="text"
+                  value={config.metadata?.title || ''}
+                  onChange={(e) => updateMetadata({ metadata: { title: e.target.value } })}
+                  placeholder={config.title}
+                  className="w-full px-3 py-2 bg-charcoal-950/50 border border-white/10 rounded-lg text-cream text-sm focus:outline-none focus:border-amber-500"
+                />
+              </div>
+              <div>
+                <label className="block text-xs text-cream/40 mb-1.5">Meta Description</label>
+                <textarea
+                  value={config.metadata?.description || ''}
+                  onChange={(e) => updateMetadata({ metadata: { description: e.target.value } })}
+                  rows={3}
+                  placeholder="Short description for search engines and social previews."
+                  className="w-full px-3 py-2 bg-charcoal-950/50 border border-white/10 rounded-lg text-cream text-sm focus:outline-none focus:border-amber-500 resize-y"
+                />
+              </div>
+              <div className="text-xs text-cream/30 pt-2 border-t border-white/[0.06]">
+                <p><span className="text-cream/50">Slug:</span> <code className="text-amber-400">{config.slug}</code></p>
+                <p className="mt-1"><span className="text-cream/50">URL:</span> <code className="text-amber-400">/{slug === 'home' ? '' : slug}</code></p>
+                <p className="mt-2 italic">Changes save when you click Save in the top toolbar.</p>
+              </div>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
 
       {/* Preview modal - rendered via portal to escape admin layout scroll container */}
       {showPreview && typeof document !== 'undefined' && createPortal(

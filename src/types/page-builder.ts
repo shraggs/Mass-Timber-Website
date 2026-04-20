@@ -27,7 +27,8 @@ export interface BlockFieldConfig {
 export interface BlockDefinition {
   label: string;
   icon: string;
-  category: 'hero' | 'content' | 'data' | 'cta' | 'social-proof';
+  category: 'hero' | 'content' | 'data' | 'cta' | 'social-proof' | 'custom';
+  description?: string;
   fields: BlockFieldConfig[];
   defaultProps: Record<string, unknown>;
 }
