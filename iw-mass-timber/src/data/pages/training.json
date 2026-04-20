@@ -31,17 +31,6 @@
       "type": "TrainingLinks",
       "props": {},
       "enabled": true
-    },
-    {
-      "id": "section-1776722814054-7",
-      "type": "RichTextSection",
-      "props": {
-        "title": "Section Title",
-        "body": "mm lmlmlmklmlmlklklmkl",
-        "align": "center",
-        "darkBackground": true
-      },
-      "enabled": true
     }
   ]
 }
