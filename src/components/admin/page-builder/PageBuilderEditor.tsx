@@ -228,7 +228,7 @@ export function PageBuilderEditor({ initialConfig, slug }: PageBuilderEditorProp
       {/* 3-panel layout */}
       <div className="flex gap-4" style={{ minHeight: 'calc(100vh - 220px)' }}>
         {/* Left: Block palette */}
-        <div className="w-52 shrink-0 bg-[#1E3A2A] border border-white/[0.06] rounded-xl p-3 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 220px)' }}>
+        <div className="w-64 shrink-0 bg-[#1E3A2A] border border-white/[0.06] rounded-xl p-3 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 220px)' }}>
           <BlockPalette onAdd={handleAdd} />
         </div>
 
@@ -237,8 +237,9 @@ export function PageBuilderEditor({ initialConfig, slug }: PageBuilderEditorProp
           <h3 className="text-xs font-semibold text-cream/40 uppercase tracking-wider mb-3">Page Sections</h3>
 
           {config.sections.length === 0 ? (
-            <div className="text-center py-16 text-cream/30 text-sm">
-              No sections yet. Add sections from the palette on the left.
+            <div className="text-center py-16 text-cream/40 text-sm space-y-2">
+              <p>No sections on this page yet.</p>
+              <p className="text-xs text-amber-400">Tip: use the amber <span className="font-bold">Build Your Own</span> block grid on the left to add your own text, images, headings, buttons, and video.</p>
             </div>
           ) : (
             <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>

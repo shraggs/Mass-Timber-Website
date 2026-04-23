@@ -55,50 +55,67 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
+  let parsed: { slug?: string; title?: string; metaTitle?: string; metaDescription?: string };
   try {
-    const { slug, title, metaTitle, metaDescription } = await request.json();
+    parsed = await request.json();
+  } catch (err) {
+    console.error('[api/admin/pages POST] invalid JSON body:', err);
+    return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
+  }
 
-    if (!slug || !title) {
-      return NextResponse.json({ error: 'Missing slug or title' }, { status: 400 });
-    }
-    if (!isValidSlug(slug)) {
-      return NextResponse.json(
-        { error: 'Slug must be lowercase letters, numbers, and dashes (2-50 chars)' },
-        { status: 400 }
-      );
-    }
-    if (RESERVED_SLUGS.has(slug)) {
-      return NextResponse.json({ error: `"${slug}" is reserved` }, { status: 400 });
-    }
+  const { slug, title, metaTitle, metaDescription } = parsed;
 
-    const filePath = `${PAGES_DIR}/${slug}.json`;
-    const fullPath = join(process.cwd(), filePath);
-    if (existsSync(fullPath)) {
-      return NextResponse.json({ error: `Page "${slug}" already exists` }, { status: 409 });
-    }
+  if (!slug || !title) {
+    return NextResponse.json({ error: 'Missing slug or title' }, { status: 400 });
+  }
+  if (!isValidSlug(slug)) {
+    return NextResponse.json(
+      { error: 'Slug must be lowercase letters, numbers, and dashes (2-50 chars)' },
+      { status: 400 }
+    );
+  }
+  if (RESERVED_SLUGS.has(slug)) {
+    return NextResponse.json({ error: `"${slug}" is reserved and cannot be used` }, { status: 400 });
+  }
 
-    const config: PageConfig = {
-      slug,
-      title,
-      metadata: {
-        title: metaTitle || title,
-        description: metaDescription || '',
+  const filePath = `${PAGES_DIR}/${slug}.json`;
+  const fullPath = join(process.cwd(), filePath);
+  if (existsSync(fullPath)) {
+    return NextResponse.json({ error: `A page with slug "${slug}" already exists` }, { status: 409 });
+  }
+
+  if (!process.env.GITHUB_TOKEN) {
+    console.error('[api/admin/pages POST] GITHUB_TOKEN env var missing');
+    return NextResponse.json(
+      { error: 'Server is missing GITHUB_TOKEN. An admin needs to set this in Render environment settings so the page can be saved to the repo.' },
+      { status: 500 }
+    );
+  }
+
+  const config: PageConfig = {
+    slug,
+    title,
+    metadata: {
+      title: metaTitle || title,
+      description: metaDescription || '',
+    },
+    sections: [
+      {
+        id: `${slug}-banner`,
+        type: 'PageBanner',
+        props: { title, subtitle: metaDescription || '', backgroundImage: '/images/hero-interior.png' },
+        enabled: true,
       },
-      sections: [
-        {
-          id: `${slug}-banner`,
-          type: 'PageBanner',
-          props: { title, subtitle: metaDescription || '', backgroundImage: '/images/hero-interior.png' },
-          enabled: true,
-        },
-      ],
-    };
+    ],
+  };
 
+  try {
     await writeFile(filePath, JSON.stringify(config, null, 2), `Admin: Create page "${title}"`);
-
     return NextResponse.json({ success: true, slug });
   } catch (err) {
-    return NextResponse.json({ error: String(err) }, { status: 500 });
+    const message = err instanceof Error ? err.message : String(err);
+    console.error('[api/admin/pages POST] write failed:', message);
+    return NextResponse.json({ error: `Save failed: ${message}` }, { status: 500 });
   }
 }
 

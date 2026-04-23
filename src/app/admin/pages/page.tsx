@@ -251,11 +251,25 @@ function CreatePageModal({
           metaDescription: metaDescription.trim(),
         }),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to create');
+
+      const contentType = res.headers.get('content-type') || '';
+      const raw = await res.text();
+      let data: { error?: string; slug?: string } = {};
+      if (contentType.includes('application/json')) {
+        try { data = JSON.parse(raw); } catch { /* leave as {} */ }
+      }
+
+      if (!res.ok) {
+        const detail = data.error || raw.slice(0, 200) || `HTTP ${res.status}`;
+        throw new Error(detail);
+      }
+      if (!data.slug) {
+        throw new Error('Server returned no slug — page may not have saved.');
+      }
       onCreated(data.slug);
     } catch (err) {
-      setError(String(err));
+      const message = err instanceof Error ? err.message : String(err);
+      setError(message);
       setSaving(false);
     }
   };
