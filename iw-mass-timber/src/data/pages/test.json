@@ -1,0 +1,20 @@
+{
+  "slug": "test",
+  "title": "test",
+  "metadata": {
+    "title": "test",
+    "description": ""
+  },
+  "sections": [
+    {
+      "id": "test-banner",
+      "type": "PageBanner",
+      "props": {
+        "title": "test",
+        "subtitle": "",
+        "backgroundImage": "/images/hero-interior.png"
+      },
+      "enabled": true
+    }
+  ]
+}
