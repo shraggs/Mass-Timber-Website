@@ -1,13 +1,5 @@
 [
   {
-    "id": "1",
-    "name": "Vaagen Timbers",
-    "slug": "vaagen-timbers",
-    "location": "Colville, WA",
-    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
-    "image": "/images/connector-detail.png"
-  },
-  {
     "id": "2",
     "name": "Mercer Mass Timber",
     "slug": "mercer-mass-timber",
