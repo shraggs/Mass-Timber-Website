@@ -55,30 +55,52 @@ export default async function SupplierDetailPage({ params }: { params: Promise<{
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-8">
-              <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden glass-light">
-                {supplier.image ? (
+              {supplier.logo ? (
+                <div className="relative h-[220px] md:h-[260px] rounded-2xl overflow-hidden bg-cream flex items-center justify-center p-10">
                   <Image
-                    src={supplier.image}
-                    alt={supplier.name}
+                    src={supplier.logo}
+                    alt={`${supplier.name} logo`}
                     fill
-                    className={`object-cover ${getImageClasses(supplier.image)}`}
+                    className="object-contain p-10"
                     sizes="(max-width: 1024px) 100vw, 66vw"
                   />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-charcoal-900/5">
-                    <svg className="w-20 h-20 text-charcoal-900/20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
-                  </div>
-                )}
-              </div>
+                </div>
+              ) : (
+                <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden glass-light">
+                  {supplier.image ? (
+                    <Image
+                      src={supplier.image}
+                      alt={supplier.name}
+                      fill
+                      className={`object-cover ${getImageClasses(supplier.image)}`}
+                      sizes="(max-width: 1024px) 100vw, 66vw"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-charcoal-900/5">
+                      <svg className="w-20 h-20 text-charcoal-900/20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                    </div>
+                  )}
+                </div>
+              )}
 
               <GlassPanel>
                 <h2 className="text-2xl font-bold font-[family-name:var(--font-jakarta)] text-charcoal-950 mb-4">About {supplier.name}</h2>
-                <p className="text-charcoal-950/70 leading-relaxed mb-4">
-                  {supplier.name} is a leading supplier and manufacturer serving the mass timber construction industry from {supplier.location}. They provide high-quality engineered wood products and structural connection systems used in mass timber projects across North America.
-                </p>
-                <p className="text-charcoal-950/70 leading-relaxed">
-                  Their product line supports the growing demand for sustainable, high-performance building materials that meet the rigorous structural requirements of modern mass timber construction. As a partner in the IW Mass Timber network, they work closely with Ironworker contractors to ensure seamless integration between material supply and field installation.
-                </p>
+                {supplier.description ? (
+                  <div className="text-charcoal-950/70 leading-relaxed space-y-4">
+                    {supplier.description.split('\n\n').map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-charcoal-950/70 leading-relaxed mb-4">
+                      {supplier.name} is a leading supplier and manufacturer serving the mass timber construction industry from {supplier.location}. They provide high-quality engineered wood products and structural connection systems used in mass timber projects across North America.
+                    </p>
+                    <p className="text-charcoal-950/70 leading-relaxed">
+                      Their product line supports the growing demand for sustainable, high-performance building materials that meet the rigorous structural requirements of modern mass timber construction. As a partner in the IW Mass Timber network, they work closely with Ironworker contractors to ensure seamless integration between material supply and field installation.
+                    </p>
+                  </>
+                )}
               </GlassPanel>
 
               <GlassPanel>
@@ -115,12 +137,27 @@ export default async function SupplierDetailPage({ params }: { params: Promise<{
                       ))}
                     </div>
                   </div>
+                  {supplier.website && (
+                    <div>
+                      <p className="text-sm font-semibold text-charcoal-950">Website</p>
+                      <a
+                        href={supplier.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-amber-600 hover:text-amber-700 break-all underline-offset-2 hover:underline mt-1 inline-block"
+                      >
+                        {supplier.website.replace(/^https?:\/\//, '')}
+                      </a>
+                    </div>
+                  )}
                 </div>
               </GlassCard>
 
-              <Button variant="primary" size="lg" href="/contact" className="w-full">
-                Request Product Info
-              </Button>
+              {supplier.website && (
+                <Button variant="primary" size="lg" href={supplier.website} external className="w-full">
+                  Visit Website
+                </Button>
+              )}
               <Button variant="outline" size="md" href="/suppliers" className="w-full">
                 Back to All Suppliers
               </Button>

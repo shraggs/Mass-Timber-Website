@@ -45,7 +45,9 @@ export interface Supplier {
   location: string;
   categories: string[];
   image?: string;
+  logo?: string;
   description?: string;
+  website?: string;
 }
 
 export interface Leader {

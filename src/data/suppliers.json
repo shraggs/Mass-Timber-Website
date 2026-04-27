@@ -1,26 +1,155 @@
 [
   {
+    "id": "1",
+    "name": "Simpson Strong-Tie",
+    "slug": "simpson-strong-tie",
+    "location": "Pleasanton, CA, USA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/workers-installing.png",
+    "description": "Simpson Strong-Tie is a global leader in structural connectors, fasteners, and engineered solutions for mass timber, light-frame, and concrete construction. Their mass timber line includes specialty connectors, screws, and panel-to-panel fastening systems engineered for CLT, glulam, and hybrid structural applications.",
+    "website": "https://www.strongtie.com"
+  },
+  {
     "id": "2",
     "name": "Mercer Mass Timber",
     "slug": "mercer-mass-timber",
-    "location": "Vancouver, British Columbia, Canada",
+    "location": "Spokane Valley, WA, USA",
     "categories": ["Manufacturer/Fabricator", "Mass Timber"],
-    "image": "/images/timber-beams-wide.png"
+    "image": "/images/timber-beams-wide.png",
+    "logo": "/images/suppliers/mercer-mass-timber.png",
+    "description": "Mercer Mass Timber manufactures cross-laminated timber (CLT) and glulam products across North America from three state-of-the-art facilities. As a fully integrated mass timber building partner, they provide design-assist, material supply, logistics, and installation services focused on sustainable construction solutions.",
+    "website": "https://www.mercermasstimber.com"
   },
   {
     "id": "3",
-    "name": "Simpson Strong-Tie",
-    "slug": "simpson-strong-tie",
-    "location": "Pleasanton, CA",
-    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
-    "image": "/images/workers-installing.png"
-  },
-  {
-    "id": "4",
     "name": "Boise Cascade",
     "slug": "boise-cascade",
     "location": "Boise, ID, USA",
     "categories": ["Manufacturer/Fabricator", "Mass Timber"],
-    "image": "/images/timber-ceiling.png"
+    "image": "/images/timber-ceiling.png",
+    "logo": "/images/suppliers/boise-cascade.png",
+    "description": "Boise Cascade manufactures engineered wood products, plywood, and lumber for residential and commercial construction. Their mass timber offerings include I-joists, laminated veneer lumber beams, glulam beams, and mass timber panels distributed nationwide through a reliable dealer network.",
+    "website": "https://www.bc.com"
+  },
+  {
+    "id": "4",
+    "name": "SmartLam NA",
+    "slug": "smartlam-na",
+    "location": "Columbia Falls, MT, USA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/timber-beams-wide.png",
+    "logo": "/images/suppliers/smartlam-na.png",
+    "description": "SmartLam NA manufactures cross-laminated timber (CLT) and glulam building products for commercial, institutional, and multi-family projects. With facilities in Columbia Falls, MT and Dothan, AL, the company brings engineering expertise, wood science, and intelligent wood technology to mass timber construction, holding the largest manufacturing capacity for mass timber in North America.",
+    "website": "https://www.smartlam.com"
+  },
+  {
+    "id": "5",
+    "name": "Element5 | HASSLACHER group",
+    "slug": "element5",
+    "location": "Toronto, ON, Canada",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/timber-beams-wide.png",
+    "logo": "/images/suppliers/element5.png",
+    "description": "Element5 is a North American mass timber manufacturer producing CLT, glulam, and other engineered wood products. The company offers cost and design consulting, structural engineering, production, and assembly services to support modern timber construction projects from concept to install.",
+    "website": "https://elementfive.co"
+  },
+  {
+    "id": "6",
+    "name": "Freres Engineered Wood",
+    "slug": "freres-engineered-wood",
+    "location": "Lyons, OR, USA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/timber-beams-wide.png",
+    "logo": "/images/suppliers/freres.png",
+    "description": "Freres Engineered Wood manufactures veneer-based cross-laminated timber and Mass Ply Panels with a 100-year history of innovation in the wood products industry. They operate multiple Oregon facilities producing plywood, lumber, veneer, and structural composite lumber for mass timber and engineered applications.",
+    "website": "https://frereswood.com"
+  },
+  {
+    "id": "7",
+    "name": "Kalesnikoff Mass Timber",
+    "slug": "kalesnikoff-mass-timber",
+    "location": "Castlegar, BC, Canada",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/timber-beams-wide.png",
+    "logo": "/images/suppliers/kalesnikoff.png",
+    "description": "Kalesnikoff Mass Timber is a vertically integrated mass timber manufacturer operating one of North America's most advanced 110,000 sq ft facilities. They produce cross-laminated timber (CLT), glue-laminated timber panels (GLT), and glulam beams for commercial and multi-family construction projects across North America.",
+    "website": "https://kalesnikoff.com"
+  },
+  {
+    "id": "8",
+    "name": "Rothoblaas",
+    "slug": "rothoblaas",
+    "location": "Orefield, PA, USA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/connector-detail.png",
+    "logo": "/images/suppliers/rothoblaas.png",
+    "description": "Rothoblaas designs and manufactures architectural and engineered components for the construction industry, specializing in fasteners, connectors, building envelope solutions, and safety products. They support both light-frame and mass timber construction, helping design professionals deliver cost-effective and efficient buildings.",
+    "website": "https://www.rothoblaas.com"
+  },
+  {
+    "id": "9",
+    "name": "Sauter Timber",
+    "slug": "sauter-timber",
+    "location": "Rockwood, TN, USA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/timber-beams-wide.png",
+    "logo": "/images/suppliers/sauter-timber.png",
+    "description": "Sauter Timber is a CNC fabricator specializing in mass timber projects, with operations in Rockwood, TN and Estacada, OR. They provide fabrication services for residential and commercial timber structures, offering design assistance and material supply sourced from a network of leading manufacturers.",
+    "website": "https://www.sautertimber.com"
+  },
+  {
+    "id": "10",
+    "name": "Sterling Structural",
+    "slug": "sterling-structural",
+    "location": "Phoenix, IL, USA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/timber-beams-wide.png",
+    "logo": "/images/suppliers/sterling-structural.png",
+    "description": "Sterling Structural manufactures U.S.-produced CLT solutions for mass timber construction. Their TerraLam® CLT panels offer a streamlined and cost-competitive product line for floors and ceilings, paired with comprehensive fabrication, installation, engineering, and design-build support.",
+    "website": "https://sterlingstructural.com"
+  },
+  {
+    "id": "11",
+    "name": "Western Archrib",
+    "slug": "western-archrib",
+    "location": "Edmonton, AB, Canada",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/timber-beams-wide.png",
+    "logo": "/images/suppliers/western-archrib.png",
+    "description": "Western Archrib has 75 years of experience manufacturing glue-laminated timber (glulam) products. They produce custom mass timber solutions including beams, columns, curved members, and arches engineered for complex architectural projects across North America.",
+    "website": "https://westernarchrib.com"
+  },
+  {
+    "id": "12",
+    "name": "WoodWorks – Wood Products Council",
+    "slug": "woodworks",
+    "location": "Washington, DC, USA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/timber-ceiling.png",
+    "logo": "/images/suppliers/woodworks.svg",
+    "description": "WoodWorks provides expert support for commercial and multi-family wood projects through free one-on-one assistance, continuing education, design tools, and on-demand technical resources. Their team helps architects, engineers, and developers across the U.S. with wood building design, engineering, and construction.",
+    "website": "https://www.woodworks.org"
+  },
+  {
+    "id": "13",
+    "name": "VaproShield",
+    "slug": "vaproshield",
+    "location": "Gig Harbor, WA, USA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/connector-detail.png",
+    "logo": "/images/suppliers/vaproshield.png",
+    "description": "VaproShield manufactures air barriers, vapor retarders, and moisture protection membranes for construction. Their permeable and impermeable building-envelope solutions are used on walls, roofs, and mass timber projects, with a focus on zero VOCs and crew safety.",
+    "website": "https://vaproshield.com"
+  },
+  {
+    "id": "14",
+    "name": "Generate",
+    "slug": "generate",
+    "location": "Boston, MA, USA",
+    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
+    "image": "/images/timber-beams-wide.png",
+    "logo": "/images/suppliers/generate.png",
+    "description": "Generate automates the design and quoting process for mass timber construction using generative optioneering technology. Their platform turns architectural concepts into optimized, buildable 3D designs in days rather than months, connecting projects directly with manufacturers and installers.",
+    "website": "https://www.generate.design"
   }
 ]
