@@ -6,7 +6,7 @@ import { GlassCard } from '@/components/ui/GlassCard';
 import { Button } from '@/components/ui/Button';
 import { GradientOrb } from '@/components/ui/GradientOrb';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Calendar, MapPin, GraduationCap, Wrench, Users } from 'lucide-react';
+import { Calendar, MapPin, GraduationCap, Wrench, Users, Download, FileText, BookOpen, ClipboardList, Package, Building2 } from 'lucide-react';
 import { slideshowImages } from '@/data/slideshow-images';
 
 export const metadata: Metadata = {
@@ -187,6 +187,89 @@ export default function TrainingMembersPage() {
                     <p className="text-xs text-charcoal-950/50 mt-1">{stat.sub}</p>
                   )}
                 </GlassPanel>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      {/* Downloads */}
+      <section className="py-16 md:py-24 relative overflow-hidden bg-cream/30">
+        <Container>
+          <SectionHeading
+            eyebrow="Downloads"
+            title="Member Resources & Documents"
+            subtitle="Course syllabi, field guides, directories, and product references — download for use on the job and in the classroom."
+            align="center"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
+            {[
+              {
+                title: '8-Hour Mass Timber Construction Training Syllabus',
+                description: 'Full course outline for the introductory mass timber installation and erection program.',
+                href: '/training-resources/8hr-mass-timber-construction-training-syllabus.docx',
+                kind: 'DOCX',
+                icon: BookOpen,
+              },
+              {
+                title: 'Mass Timber Prerequisite LMS Instructions',
+                description: 'Step-by-step instructions for completing the online prerequisites before in-person training.',
+                href: '/training-resources/mass-timber-prereq-lms-instructions.docx',
+                kind: 'DOCX',
+                icon: GraduationCap,
+              },
+              {
+                title: 'IW Field Guide & Sequence Checklist',
+                description: 'On-the-job reference for proper sequencing of mass timber erection tasks.',
+                href: '/training-resources/iw-field-guide-sequence-checklist.docx',
+                kind: 'DOCX',
+                icon: ClipboardList,
+              },
+              {
+                title: 'Mass Timber Product Catalog 2026',
+                description: 'Reference catalog of fasteners, connectors, and product systems used on mass timber jobs.',
+                href: '/training-resources/mass-timber-product-catalog-2026.pdf',
+                kind: 'PDF',
+                icon: Package,
+              },
+              {
+                title: '2024 Apprenticeship Directory',
+                description: 'Complete directory of Joint Apprenticeship & Training Centers across the US and Canada.',
+                href: '/training-resources/2024-apprenticeship-directory.pdf',
+                kind: 'PDF',
+                icon: Building2,
+              },
+            ].map((doc) => {
+              const Icon = doc.icon;
+              return (
+                <a
+                  key={doc.href}
+                  href={doc.href}
+                  download
+                  className="group block"
+                >
+                  <GlassPanel className="h-full hover:shadow-lg transition-shadow">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 shrink-0 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-[10px] font-bold tracking-widest text-amber-600 bg-amber-500/10 px-1.5 py-0.5 rounded">{doc.kind}</span>
+                          <FileText className="w-3 h-3 text-charcoal-950/30" />
+                        </div>
+                        <h3 className="text-base font-bold font-[family-name:var(--font-jakarta)] text-charcoal-950 mb-1.5 group-hover:text-amber-600 transition-colors">
+                          {doc.title}
+                        </h3>
+                        <p className="text-xs text-charcoal-950/60 leading-relaxed mb-3">{doc.description}</p>
+                        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 group-hover:text-amber-700">
+                          <Download className="w-3.5 h-3.5" />
+                          Download
+                        </div>
+                      </div>
+                    </div>
+                  </GlassPanel>
+                </a>
               );
             })}
           </div>
