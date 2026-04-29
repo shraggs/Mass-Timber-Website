@@ -6,6 +6,7 @@ import { GlassCard } from '@/components/ui/GlassCard';
 import { Button } from '@/components/ui/Button';
 import { GradientOrb } from '@/components/ui/GradientOrb';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { Calendar, MapPin, GraduationCap, Wrench, Users } from 'lucide-react';
 import { slideshowImages } from '@/data/slideshow-images';
 
 export const metadata: Metadata = {
@@ -88,6 +89,106 @@ export default function TrainingMembersPage() {
             <p className="text-charcoal-950/70 leading-relaxed">
               Training is available at accredited facilities across the United States and Canada, with schedules designed to accommodate working members. Certification demonstrates your expertise to contractors and opens doors to new project opportunities.
             </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Upcoming Events */}
+      <section className="py-16 md:py-24 bg-charcoal-950 relative overflow-hidden">
+        <GradientOrb color="amber" size="lg" speed="slow" className="-left-20 top-20 opacity-15" />
+        <Container>
+          <SectionHeading
+            eyebrow="Upcoming"
+            title="Mark Your Calendar"
+            subtitle="Two flagship dates for members and trainers in 2026."
+            dark
+            align="center"
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+            <GlassCard variant="dark" padding="lg" className="border-amber-400/20">
+              <div className="flex items-start gap-4 mb-5">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-400 shrink-0">
+                  <GraduationCap className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">Train the Trainer</p>
+                  <h3 className="text-2xl font-bold font-[family-name:var(--font-jakarta)] text-cream">Mass Timber TTT Course</h3>
+                </div>
+              </div>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-2 text-cream/80">
+                  <Calendar className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>September 15–17, 2026</span>
+                </div>
+                <div className="flex items-center gap-2 text-cream/80">
+                  <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>West Coast Regional Training Center</span>
+                </div>
+              </div>
+              <p className="text-cream/60 text-sm leading-relaxed mt-5">
+                Three intensive days preparing certified instructors to deliver mass timber installation and erection curriculum at their home training centers.
+              </p>
+            </GlassCard>
+
+            <GlassCard variant="dark" padding="lg" className="border-amber-400/20">
+              <div className="flex items-start gap-4 mb-5">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-400 shrink-0">
+                  <Users className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">Conference</p>
+                  <h3 className="text-2xl font-bold font-[family-name:var(--font-jakarta)] text-cream">Mass Timber Conference</h3>
+                </div>
+              </div>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-2 text-cream/80">
+                  <Calendar className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>October 6–8, 2026</span>
+                </div>
+                <div className="flex items-center gap-2 text-cream/80">
+                  <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>Pennsylvania Convention Center, Philadelphia</span>
+                </div>
+              </div>
+              <p className="text-cream/60 text-sm leading-relaxed mt-5">
+                The largest gathering of mass timber stakeholders in North America — sessions on design, fabrication, erection best practices, and emerging code developments.
+              </p>
+            </GlassCard>
+          </div>
+        </Container>
+      </section>
+
+      {/* By the Numbers */}
+      <section className="py-16 md:py-20 relative overflow-hidden">
+        <GradientOrb color="forest" size="md" speed="normal" className="-right-20 top-10 opacity-10" />
+        <Container>
+          <div className="text-center mb-10">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-600 mb-2">By the Numbers</p>
+            <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-jakarta)] text-charcoal-950">Mass Timber Training Reach</h2>
+            <p className="text-sm text-charcoal-950/50 mt-3">Current as of April 2026</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { value: '83', label: 'Trainers Across the US & Canada', icon: GraduationCap },
+              { value: '51', label: 'Mock-Ups at Local JATCs', icon: Wrench, sub: 'Joint Apprenticeship & Training Centers' },
+              { value: '735', label: 'Members Trained in Mass Timber Installation & Erection', icon: Users },
+            ].map((stat) => {
+              const Icon = stat.icon;
+              return (
+                <GlassPanel key={stat.label} className="text-center">
+                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 mx-auto mb-4">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <div className="text-5xl md:text-6xl font-bold font-[family-name:var(--font-jakarta)] text-charcoal-950 leading-none mb-3">
+                    {stat.value}
+                  </div>
+                  <p className="text-sm font-semibold text-charcoal-950/80">{stat.label}</p>
+                  {stat.sub && (
+                    <p className="text-xs text-charcoal-950/50 mt-1">{stat.sub}</p>
+                  )}
+                </GlassPanel>
+              );
+            })}
           </div>
         </Container>
       </section>
