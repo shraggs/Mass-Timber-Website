@@ -5,6 +5,7 @@ export interface Contractor {
   description?: string;
   address?: string;
   phone?: string;
+  website?: string;
   rating: number;
   reviewCount: number;
   badges: ('featured' | 'popular')[];

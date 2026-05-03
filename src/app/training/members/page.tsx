@@ -6,7 +6,7 @@ import { GlassCard } from '@/components/ui/GlassCard';
 import { Button } from '@/components/ui/Button';
 import { GradientOrb } from '@/components/ui/GradientOrb';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Calendar, MapPin, GraduationCap, Wrench, Users, Download, FileText, BookOpen, ClipboardList, Package, Building2 } from 'lucide-react';
+import { Calendar, MapPin, GraduationCap, Wrench, Users, Download, FileText, BookOpen, ClipboardList, Package, Building2, ExternalLink, Video, CheckCircle2, ArrowRight } from 'lucide-react';
 import { slideshowImages } from '@/data/slideshow-images';
 
 export const metadata: Metadata = {
@@ -158,6 +158,80 @@ export default function TrainingMembersPage() {
         </Container>
       </section>
 
+      {/* Course at a Glance */}
+      <section className="py-16 md:py-24 relative overflow-hidden bg-cream/30">
+        <Container>
+          <SectionHeading
+            eyebrow="Course at a Glance"
+            title="Mass Timber Construction Training for Ironworkers"
+            subtitle="A blended-learning course combining self-paced online modules with an 8-hour hands-on session at your local training center."
+            align="center"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+            {[
+              {
+                label: 'Format',
+                value: '8 hours hands-on',
+                detail: 'Plus self-paced LMS modules',
+                icon: BookOpen,
+              },
+              {
+                label: 'Prerequisites',
+                value: 'OSHA 10/30',
+                detail: 'Plus Ironworker rigging course or qualified rigger',
+                icon: CheckCircle2,
+              },
+              {
+                label: 'Who Can Enroll',
+                value: 'Apprentices & Journeymen',
+                detail: 'Union ironworker members in good standing',
+                icon: Users,
+              },
+              {
+                label: 'Passing Score',
+                value: '70% minimum',
+                detail: 'Knowledge assessment with retake allowed',
+                icon: GraduationCap,
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <GlassPanel key={item.label} className="text-center">
+                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 mx-auto mb-4">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-charcoal-950/40 mb-1">{item.label}</p>
+                  <p className="text-lg font-bold text-charcoal-950 mb-1.5 leading-snug">{item.value}</p>
+                  <p className="text-xs text-charcoal-950/60 leading-relaxed">{item.detail}</p>
+                </GlassPanel>
+              );
+            })}
+          </div>
+          <div className="mt-10 max-w-3xl mx-auto">
+            <GlassPanel>
+              <h3 className="text-lg font-bold font-[family-name:var(--font-jakarta)] text-charcoal-950 mb-4">What You&rsquo;ll Learn</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5">
+                {[
+                  'Fundamentals of mass timber construction',
+                  'Benefits and limitations of mass timber',
+                  'Mass timber preconstruction practices',
+                  'Moisture control principles',
+                  'Construction site safety best practices',
+                  'Preparing to install mass timber products',
+                  'Hands-on installation of mass timber products',
+                  'Erecting and dismantling a mass timber mock-up',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2 text-sm text-charcoal-950/70">
+                    <CheckCircle2 className="w-4 h-4 text-forest-500 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </GlassPanel>
+          </div>
+        </Container>
+      </section>
+
       {/* By the Numbers */}
       <section className="py-16 md:py-20 relative overflow-hidden">
         <GradientOrb color="forest" size="md" speed="normal" className="-right-20 top-10 opacity-10" />
@@ -272,6 +346,108 @@ export default function TrainingMembersPage() {
                 </a>
               );
             })}
+          </div>
+        </Container>
+      </section>
+
+      {/* LMS Enrollment Steps (for trainers) */}
+      <section className="py-16 md:py-24 bg-charcoal-950 relative overflow-hidden">
+        <GradientOrb color="forest" size="md" speed="normal" className="-right-20 top-20 opacity-15" />
+        <Container>
+          <SectionHeading
+            eyebrow="For Training Coordinators"
+            title="How to Enroll Members on the IW-LMS"
+            subtitle="Mass Timber prerequisite training is delivered through the Ironworkers Learning Management System. Here's the four-step enrollment flow for training centers."
+            dark
+            align="center"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+            {[
+              {
+                step: '1',
+                title: 'Identify Your Students',
+                detail: 'Confirm whether each student is already an LMS user. New users need to be added before they can enroll.',
+              },
+              {
+                step: '2',
+                title: 'Submit New User Requests',
+                detail: 'Fill out the online new-user form for each student. Each LMS user must have a unique email — no exceptions. Allow 2–3 business days for processing.',
+              },
+              {
+                step: '3',
+                title: 'Check the Mass Timber Box',
+                detail: 'On the form, select "Mass Timber Prerequisite Training" under OPTIONAL Course Enrollments. New users automatically inherit the enrollment.',
+              },
+              {
+                step: '4',
+                title: 'Distribute Course Access',
+                detail: 'Once enrollment is confirmed, share the LMS course link with your students so they can complete the self-paced modules and knowledge test.',
+              },
+            ].map((s) => (
+              <GlassCard key={s.step} variant="dark" padding="lg" className="relative">
+                <div className="absolute -top-4 left-5 w-9 h-9 rounded-full bg-amber-500 text-charcoal-950 font-bold text-base flex items-center justify-center shadow-lg">
+                  {s.step}
+                </div>
+                <h3 className="text-base font-bold font-[family-name:var(--font-jakarta)] text-cream mt-4 mb-3">{s.title}</h3>
+                <p className="text-cream/60 text-sm leading-relaxed">{s.detail}</p>
+              </GlassCard>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <p className="text-sm text-cream/50">
+              Existing LMS users? Email a list of student names and book numbers to be added to the enrollment directly. The full instructions are in the&nbsp;
+              <a href="/training-resources/mass-timber-prereq-lms-instructions.docx" download className="text-amber-400 hover:text-amber-300 underline-offset-2 hover:underline">
+                LMS Instructions document
+              </a>.
+            </p>
+            <p className="text-xs text-cream/40 mt-2">Knowledge Test: 70% to pass &middot; 2 attempts allowed &middot; contact your training center if more attempts are needed.</p>
+          </div>
+        </Container>
+      </section>
+
+      {/* WoodWorks External Resources */}
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        <GradientOrb color="amber" size="md" speed="slow" className="-left-20 bottom-10 opacity-10" />
+        <Container>
+          <div className="max-w-4xl mx-auto">
+            <GlassPanel>
+              <div className="flex flex-col md:flex-row gap-6 md:items-center">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-cream flex items-center justify-center shrink-0 mx-auto md:mx-0 p-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/suppliers/woodworks.svg" alt="WoodWorks" className="w-full h-full object-contain" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <p className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-2">Continuing Education</p>
+                  <h3 className="text-2xl font-bold font-[family-name:var(--font-jakarta)] text-charcoal-950 mb-3">
+                    Free Webinars from WoodWorks
+                  </h3>
+                  <p className="text-charcoal-950/70 leading-relaxed mb-5">
+                    The Wood Products Council (WoodWorks) offers an extensive library of webinars covering mass timber design, fabrication, code requirements, and case studies — and most of them are <span className="font-bold text-charcoal-950">completely free</span>. They&rsquo;re a great way for members and trainers to stay current between formal training sessions.
+                  </p>
+                  <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                    <a
+                      href="https://www.woodworks.org/events/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-sm bg-amber-500 text-charcoal-950 hover:bg-amber-400 transition-colors"
+                    >
+                      <Video className="w-4 h-4" />
+                      Browse WoodWorks Webinars
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                    <a
+                      href="https://www.woodworks.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-sm border-2 border-amber-500 text-amber-600 hover:bg-amber-500/10 transition-colors"
+                    >
+                      Visit WoodWorks.org
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </GlassPanel>
           </div>
         </Container>
       </section>
