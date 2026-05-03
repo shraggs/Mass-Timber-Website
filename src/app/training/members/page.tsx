@@ -384,11 +384,11 @@ export default function TrainingMembersPage() {
                 detail: 'Once enrollment is confirmed, share the LMS course link with your students so they can complete the self-paced modules and knowledge test.',
               },
             ].map((s) => (
-              <GlassCard key={s.step} variant="dark" padding="lg" className="relative">
-                <div className="absolute -top-4 left-5 w-9 h-9 rounded-full bg-amber-500 text-charcoal-950 font-bold text-base flex items-center justify-center shadow-lg">
+              <GlassCard key={s.step} variant="dark" padding="lg">
+                <div className="w-10 h-10 rounded-full bg-amber-500 text-charcoal-950 font-bold text-base flex items-center justify-center shadow-lg mb-4">
                   {s.step}
                 </div>
-                <h3 className="text-base font-bold font-[family-name:var(--font-jakarta)] text-cream mt-4 mb-3">{s.title}</h3>
+                <h3 className="text-base font-bold font-[family-name:var(--font-jakarta)] text-cream mb-3">{s.title}</h3>
                 <p className="text-cream/60 text-sm leading-relaxed">{s.detail}</p>
               </GlassCard>
             ))}
