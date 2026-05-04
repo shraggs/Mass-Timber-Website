@@ -16,7 +16,8 @@ export function generateSlug(text: string): string {
 // Images needing clockwise rotation (+90deg)
 const ROTATED_CW_IMAGES: string[] = [
   // rotated-site-1, rotated-site-2, rotated-contact removed - Next.js handles EXIF
-  'safety-1',
+  // safety-1 / about-hero / timber-frame-wide / site-overview were rotated
+  // in-file (90deg CW) so they now display correctly without a CSS hack.
 ];
 
 // Images needing counterclockwise rotation (-90deg)

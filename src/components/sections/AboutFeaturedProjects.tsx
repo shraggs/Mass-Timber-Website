@@ -5,7 +5,7 @@ import { GlassCard } from '@/components/ui/GlassCard';
 
 const featuredProjects = [
   { name: 'Bellingham Public Schools Administrative Offices', location: 'Bellingham, Washington 98226', image: '/images/construction-wide.png' },
-  { name: 'Santa Barbara Police Station', location: '215 E Figueroa St, Santa Barbara, CA 93101', image: '/images/timber-beams-wide.png' },
+  { name: 'Santa Barbara Police Station', location: '215 E Figueroa St, Santa Barbara, CA 93101', image: '/images/workers-installing.png' },
   { name: 'T3 Mount Pleasant', location: '123 East 6th Avenue, Vancouver, BC, CA V5T 1J6', image: '/images/panoramic-beams.png' },
 ];
 
