@@ -99,7 +99,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 {hasGallery ? (
                   <ProjectGallery images={project.gallery!} projectName={project.name} />
                 ) : (
-                  <div className="relative h-[300px] md:h-[450px] rounded-2xl overflow-hidden glass-light">
+                  <div className="relative h-[420px] md:h-[600px] lg:h-[680px] rounded-2xl overflow-hidden glass-light">
                     {project.image ? (
                       <Image
                         src={project.image}
