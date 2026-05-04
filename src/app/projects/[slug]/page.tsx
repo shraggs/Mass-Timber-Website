@@ -243,6 +243,29 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   Back to All Projects
                 </Button>
               </ScrollReveal>
+
+              {project.slug === 'walmart-home-office-campus' && (
+                <ScrollReveal direction="right" delay={0.3}>
+                  <a
+                    href="https://www.youtube.com/watch?v=pdJYsWFq-MQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group"
+                  >
+                    <GlassCard padding="md" hover>
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 shrink-0 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-charcoal-950/50 mb-0.5">Related Watch</p>
+                          <p className="text-sm font-semibold text-charcoal-950 leading-snug">Composite-crew mass timber on Ascent, Milwaukee</p>
+                        </div>
+                      </div>
+                    </GlassCard>
+                  </a>
+                </ScrollReveal>
+              )}
             </div>
           </div>
         </Container>

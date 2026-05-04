@@ -10,6 +10,8 @@ export interface Contractor {
   reviewCount: number;
   badges: ('featured' | 'popular')[];
   image?: string;
+  logo?: string;
+  logoOnDark?: boolean;
   categories: string[];
   location?: string;
   lat?: number | null;
