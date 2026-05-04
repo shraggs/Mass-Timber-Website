@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { getImageClasses } from '@/lib/utils';
 import type { Project } from '@/types';
@@ -26,10 +25,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <svg className="w-12 h-12 text-charcoal-900/20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/60 to-transparent" />
-        <div className="absolute bottom-3 left-3">
-          <Badge variant="category">{project.category}</Badge>
-        </div>
       </div>
       <div className="p-5">
         <h3 className="text-lg font-bold font-[family-name:var(--font-jakarta)] text-charcoal-950 mb-1">

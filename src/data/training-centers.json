@@ -33,17 +33,6 @@
     "status": "Active"
   },
   {
-    "id": "4",
-    "name": "Southern California Mass Timber Lab",
-    "city": "Los Angeles",
-    "state": "CA",
-    "region": "West",
-    "address": "2121 E. Olympic Blvd., Los Angeles, CA 90021",
-    "phone": "(213) 239-0171",
-    "courses": ["CLT Panel Installation", "Hybrid Connection Systems", "Fall Protection"],
-    "status": "Active"
-  },
-  {
     "id": "5",
     "name": "Ontario Ironworkers Training Centre",
     "city": "Toronto",
