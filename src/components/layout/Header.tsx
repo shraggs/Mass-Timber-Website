@@ -3,8 +3,8 @@
 import { useState, useCallback, useEffect } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Mail, Phone, Search, Menu, ChevronDown, ExternalLink } from 'lucide-react';
-import { CONTACT_EMAIL, CONTACT_PHONE, SOCIAL_LINKS } from '@/lib/constants';
+import { Mail, Search, Menu, ChevronDown, ExternalLink } from 'lucide-react';
+import { CONTACT_EMAIL, SOCIAL_LINKS } from '@/lib/constants';
 import { MobileMenu } from './MobileMenu';
 
 const navItems = [
@@ -73,10 +73,6 @@ export function Header() {
             <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-2 hover:text-amber-400 transition-colors">
               <Mail className="w-4 h-4" />
               {CONTACT_EMAIL}
-            </a>
-            <a href={`tel:${CONTACT_PHONE.replace(/[^+\d]/g, '')}`} className="flex items-center gap-2 hover:text-amber-400 transition-colors">
-              <Phone className="w-4 h-4" />
-              {CONTACT_PHONE}
             </a>
           </div>
           <div className="flex items-center gap-4">

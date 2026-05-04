@@ -8,21 +8,21 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/motion
 const contactCards = [
   {
     name: 'Tom Baun',
-    title: 'Special Project Director',
+    title: 'Mass Timber Director',
     phone: '(509) 675-0377',
     email: 'tb3tree@gmail.com',
     image: '/images/leadership/tom-baun.jpeg',
   },
   {
     name: 'Mike Smith',
-    title: 'Contact Representative',
+    title: 'Contractor Representative',
     phone: '(603) 387-6135',
     email: 'msmith@iwdcne.org',
     image: '/images/leadership/mike-smith.png',
   },
   {
     name: 'Eddie Jezek',
-    title: 'Contact Representative',
+    title: 'Compliance Officer',
     phone: '(253) 632-6442',
     email: 'eddie@local86.org',
     image: '/images/leadership/eddie-jezek.jpg',
