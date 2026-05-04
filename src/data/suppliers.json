@@ -6,6 +6,7 @@
     "location": "Pleasanton, CA, USA",
     "categories": ["Manufacturer/Fabricator", "Mass Timber"],
     "image": "/images/workers-installing.png",
+    "logo": "/images/suppliers/simpson-strong-tie.png",
     "description": "Simpson Strong-Tie is a global leader in structural connectors, fasteners, and engineered solutions for mass timber, light-frame, and concrete construction. Their mass timber line includes specialty connectors, screws, and panel-to-panel fastening systems engineered for CLT, glulam, and hybrid structural applications.",
     "website": "https://www.strongtie.com"
   },
@@ -120,17 +121,6 @@
     "website": "https://westernarchrib.com"
   },
   {
-    "id": "12",
-    "name": "WoodWorks – Wood Products Council",
-    "slug": "woodworks",
-    "location": "Washington, DC, USA",
-    "categories": ["Manufacturer/Fabricator", "Mass Timber"],
-    "image": "/images/timber-ceiling.png",
-    "logo": "/images/suppliers/woodworks.svg",
-    "description": "WoodWorks provides expert support for commercial and multi-family wood projects through free one-on-one assistance, continuing education, design tools, and on-demand technical resources. Their team helps architects, engineers, and developers across the U.S. with wood building design, engineering, and construction.",
-    "website": "https://www.woodworks.org"
-  },
-  {
     "id": "13",
     "name": "VaproShield",
     "slug": "vaproshield",
@@ -149,6 +139,7 @@
     "categories": ["Manufacturer/Fabricator", "Mass Timber"],
     "image": "/images/timber-beams-wide.png",
     "logo": "/images/suppliers/generate.png",
+    "logoOnDark": true,
     "description": "Generate automates the design and quoting process for mass timber construction using generative optioneering technology. Their platform turns architectural concepts into optimized, buildable 3D designs in days rather than months, connecting projects directly with manufacturers and installers.",
     "website": "https://www.generate.design"
   }

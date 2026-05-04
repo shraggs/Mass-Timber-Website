@@ -12,7 +12,7 @@ interface SupplierCardProps {
 export function SupplierCard({ supplier }: SupplierCardProps) {
   return (
     <GlassCard hover padding="none">
-      <div className="relative h-48 overflow-hidden bg-cream flex items-center justify-center p-6">
+      <div className={`relative h-48 overflow-hidden flex items-center justify-center p-6 ${supplier.logoOnDark ? 'bg-charcoal-950' : 'bg-cream'}`}>
         {supplier.logo ? (
           <Image
             src={supplier.logo}

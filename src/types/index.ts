@@ -47,6 +47,7 @@ export interface Supplier {
   categories: string[];
   image?: string;
   logo?: string;
+  logoOnDark?: boolean;
   description?: string;
   website?: string;
 }

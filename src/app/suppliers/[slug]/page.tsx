@@ -56,7 +56,7 @@ export default async function SupplierDetailPage({ params }: { params: Promise<{
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-8">
               {supplier.logo ? (
-                <div className="relative h-[220px] md:h-[260px] rounded-2xl overflow-hidden bg-cream flex items-center justify-center p-10">
+                <div className={`relative h-[220px] md:h-[260px] rounded-2xl overflow-hidden flex items-center justify-center p-10 ${supplier.logoOnDark ? 'bg-charcoal-950' : 'bg-cream'}`}>
                   <Image
                     src={supplier.logo}
                     alt={`${supplier.name} logo`}
