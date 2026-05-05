@@ -6,7 +6,7 @@ import { GlassCard } from '@/components/ui/GlassCard';
 import { Button } from '@/components/ui/Button';
 import leadershipData from '@/data/leadership.json';
 
-const otherNames = ['Michael Hess', 'Zach Gorman', 'John Cangey', 'Bert Royer'];
+const otherNames = ['Joe Sorensen', 'Zach Gorman', 'John Cangey', 'Bert Royer'];
 
 export function TeamPreview() {
   const tomBaun = leadershipData.find(m => m.name === 'Tom Baun');
