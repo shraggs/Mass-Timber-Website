@@ -8,32 +8,30 @@ interface ChatToggleButtonProps {
 }
 
 interface Position {
-  x: number;
-  y: number;
+  right: number;
+  bottom: number;
 }
 
-const STORAGE_KEY = 'chat-button-position';
+const STORAGE_KEY = 'chat-button-position-v2';
+const LEGACY_STORAGE_KEY = 'chat-button-position';
 const HOLD_DURATION_MS = 2000;
 const DRAG_THRESHOLD_PX = 6;
 const BUTTON_SIZE = 56;
 const EDGE_MARGIN = 16;
+const DEFAULT_OFFSET = 24;
 
 function clampToViewport(pos: Position): Position {
   if (typeof window === 'undefined') return pos;
-  const maxX = window.innerWidth - BUTTON_SIZE - EDGE_MARGIN;
-  const maxY = window.innerHeight - BUTTON_SIZE - EDGE_MARGIN;
+  const maxRight = window.innerWidth - BUTTON_SIZE - EDGE_MARGIN;
+  const maxBottom = window.innerHeight - BUTTON_SIZE - EDGE_MARGIN;
   return {
-    x: Math.max(EDGE_MARGIN, Math.min(pos.x, maxX)),
-    y: Math.max(EDGE_MARGIN, Math.min(pos.y, maxY)),
+    right: Math.max(EDGE_MARGIN, Math.min(pos.right, maxRight)),
+    bottom: Math.max(EDGE_MARGIN, Math.min(pos.bottom, maxBottom)),
   };
 }
 
 function getDefaultPosition(): Position {
-  if (typeof window === 'undefined') return { x: 0, y: 0 };
-  return {
-    x: window.innerWidth - BUTTON_SIZE - 24,
-    y: window.innerHeight - BUTTON_SIZE - 24,
-  };
+  return { right: DEFAULT_OFFSET, bottom: DEFAULT_OFFSET };
 }
 
 export function ChatToggleButton({ isOpen, onClick }: ChatToggleButtonProps) {
@@ -42,15 +40,19 @@ export function ChatToggleButton({ isOpen, onClick }: ChatToggleButtonProps) {
   const [isDragging, setIsDragging] = useState(false);
 
   const holdTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const pointerDownRef = useRef<{ x: number; y: number; buttonX: number; buttonY: number } | null>(null);
+  const pointerDownRef = useRef<{ x: number; y: number; right: number; bottom: number } | null>(null);
   const movedDuringPressRef = useRef(false);
 
   // Load persisted position on mount
   useEffect(() => {
+    // Wipe legacy absolute-pixel position so it can't drag the button into the middle
+    try { localStorage.removeItem(LEGACY_STORAGE_KEY); } catch { /* ignore */ }
+
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       const stored = raw ? (JSON.parse(raw) as Position) : null;
-      setPosition(clampToViewport(stored ?? getDefaultPosition()));
+      const valid = stored && typeof stored.right === 'number' && typeof stored.bottom === 'number';
+      setPosition(clampToViewport(valid ? stored : getDefaultPosition()));
     } catch {
       setPosition(getDefaultPosition());
     }
@@ -69,7 +71,7 @@ export function ChatToggleButton({ isOpen, onClick }: ChatToggleButtonProps) {
 
   const handlePointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
     if (!position) return;
-    pointerDownRef.current = { x: e.clientX, y: e.clientY, buttonX: position.x, buttonY: position.y };
+    pointerDownRef.current = { x: e.clientX, y: e.clientY, right: position.right, bottom: position.bottom };
     movedDuringPressRef.current = false;
     setDragArmed(false);
     e.currentTarget.setPointerCapture(e.pointerId);
@@ -88,10 +90,11 @@ export function ChatToggleButton({ isOpen, onClick }: ChatToggleButtonProps) {
     }
     if (dragArmed) {
       setIsDragging(true);
+      // Pointer moves right/down -> right/bottom offsets shrink
       setPosition(
         clampToViewport({
-          x: pointerDownRef.current.buttonX + dx,
-          y: pointerDownRef.current.buttonY + dy,
+          right: pointerDownRef.current.right - dx,
+          bottom: pointerDownRef.current.bottom - dy,
         })
       );
     }
@@ -134,7 +137,7 @@ export function ChatToggleButton({ isOpen, onClick }: ChatToggleButtonProps) {
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
       onPointerCancel={handlePointerCancel}
-      style={{ left: position.x, top: position.y, touchAction: 'none' }}
+      style={{ right: position.right, bottom: position.bottom, touchAction: 'none' }}
       className={`fixed z-[1001] w-14 h-14 rounded-full bg-amber-500 text-white shadow-lg transition-transform flex items-center justify-center ${
         dragArmed ? 'scale-110 ring-4 ring-amber-300 cursor-grabbing' : 'hover:bg-amber-600 hover:scale-105 cursor-grab'
       }`}

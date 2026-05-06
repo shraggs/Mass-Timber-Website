@@ -98,7 +98,7 @@ export function Header() {
       {/* Main navigation - no framer motion height animation to avoid glitching */}
       <header
         className={`sticky top-0 z-[100] bg-[#1E3A2A] border-b border-white/[0.06] transition-all duration-300 ease-out ${
-          scrolled ? 'h-[72px] shadow-lg shadow-black/30' : 'h-[100px]'
+          scrolled ? 'h-[96px] shadow-lg shadow-black/30' : 'h-[140px]'
         }`}
       >
         <div className="w-full h-full px-6 lg:px-10">
@@ -109,7 +109,7 @@ export function Header() {
                 src="/images/Main_Mass_Timber_Logo.PNG"
                 alt="Ironworkers Mass Timber"
                 className={`object-contain hover:brightness-110 transition-all duration-300 ease-out rounded-full ${
-                  scrolled ? 'h-[56px] w-[56px]' : 'h-[92px] w-[92px]'
+                  scrolled ? 'h-[80px] w-[80px]' : 'h-[124px] w-[124px]'
                 }`}
               />
             </Link>
@@ -204,7 +204,7 @@ export function Header() {
                   src="/images/Secondary_Mass_Timber_Logo.PNG"
                   alt="Impact Mass Timber"
                   className={`w-auto object-contain hover:brightness-110 transition-all duration-300 ease-out ${
-                    scrolled ? 'h-[56px]' : 'h-[92px]'
+                    scrolled ? 'h-[80px]' : 'h-[124px]'
                   }`}
                 />
               </Link>
