@@ -10,8 +10,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <GlassCard hover padding="none">
-      <div className="relative h-56 overflow-hidden">
+    <GlassCard hover padding="none" className="h-full flex flex-col">
+      <div className="relative h-56 overflow-hidden shrink-0">
         {project.image ? (
           <Image
             src={project.image}
@@ -26,7 +26,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         )}
       </div>
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-1">
         <h3 className="text-lg font-bold font-[family-name:var(--font-jakarta)] text-charcoal-950 mb-1">
           {project.name}
         </h3>
@@ -34,9 +34,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <svg className="w-4 h-4 text-amber-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
           {project.location}
         </p>
-        <Button variant="outline" size="sm" href={`/projects/${project.slug}`} className="w-full">
-          Details
-        </Button>
+        <div className="mt-auto">
+          <Button variant="outline" size="sm" href={`/projects/${project.slug}`} className="w-full">
+            Details
+          </Button>
+        </div>
       </div>
     </GlassCard>
   );

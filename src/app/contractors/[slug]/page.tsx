@@ -6,7 +6,6 @@ import { Container } from '@/components/ui/Container';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { GlassPanel } from '@/components/ui/GlassPanel';
 import { Badge } from '@/components/ui/Badge';
-import { StarRating } from '@/components/ui/StarRating';
 import { Button } from '@/components/ui/Button';
 import { GradientOrb } from '@/components/ui/GradientOrb';
 import { isRotatedImage, getImageRotation, cn } from '@/lib/utils';
@@ -117,7 +116,6 @@ export default async function ContractorDetailPage({ params }: { params: Promise
                   </div>
                 )}
 
-                <StarRating rating={contractor.rating} reviewCount={contractor.reviewCount} className="mb-4" />
 
                 <div className="space-y-3">
                   {contractor.address && (

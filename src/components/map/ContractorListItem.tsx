@@ -1,5 +1,4 @@
 import type { Contractor } from '@/types';
-import { StarRating } from '@/components/ui/StarRating';
 import { Badge } from '@/components/ui/Badge';
 
 interface ContractorListItemProps {
@@ -30,11 +29,6 @@ export function ContractorListItem({ contractor, distance, isActive, onClick }: 
               </svg>
               <span className="line-clamp-2">{contractor.address}</span>
             </p>
-          )}
-          {contractor.rating > 0 && (
-            <div className="mt-1">
-              <StarRating rating={contractor.rating} reviewCount={contractor.reviewCount} />
-            </div>
           )}
         </div>
         <div className="shrink-0 flex flex-col items-end gap-1">

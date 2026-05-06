@@ -11,8 +11,8 @@ interface SupplierCardProps {
 
 export function SupplierCard({ supplier }: SupplierCardProps) {
   return (
-    <GlassCard hover padding="none">
-      <div className={`relative h-48 overflow-hidden flex items-center justify-center p-6 ${supplier.logoOnDark ? 'bg-charcoal-950' : 'bg-cream'}`}>
+    <GlassCard hover padding="none" className="h-full flex flex-col">
+      <div className={`relative h-48 overflow-hidden flex items-center justify-center p-6 shrink-0 ${supplier.logoOnDark ? 'bg-charcoal-950' : 'bg-cream'}`}>
         {supplier.logo ? (
           <Image
             src={supplier.logo}
@@ -33,7 +33,7 @@ export function SupplierCard({ supplier }: SupplierCardProps) {
           <svg className="w-12 h-12 text-charcoal-900/20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
         )}
       </div>
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-1">
         <h3 className="text-lg font-bold font-[family-name:var(--font-jakarta)] text-charcoal-950 mb-2">
           {supplier.name}
         </h3>
@@ -49,9 +49,11 @@ export function SupplierCard({ supplier }: SupplierCardProps) {
             <Badge key={cat} variant="category">{cat}</Badge>
           ))}
         </div>
-        <Button variant="outline" size="sm" href={`/suppliers/${supplier.slug}`} className="w-full">
-          Details
-        </Button>
+        <div className="mt-auto">
+          <Button variant="outline" size="sm" href={`/suppliers/${supplier.slug}`} className="w-full">
+            Details
+          </Button>
+        </div>
       </div>
     </GlassCard>
   );

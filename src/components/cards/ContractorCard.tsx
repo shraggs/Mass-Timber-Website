@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Badge } from '@/components/ui/Badge';
-import { StarRating } from '@/components/ui/StarRating';
 import { Button } from '@/components/ui/Button';
 import { isRotatedImage, getImageRotation, cn } from '@/lib/utils';
 import type { Contractor } from '@/types';
@@ -12,9 +11,9 @@ interface ContractorCardProps {
 
 export function ContractorCard({ contractor }: ContractorCardProps) {
   return (
-    <GlassCard hover padding="none">
+    <GlassCard hover padding="none" className="h-full flex flex-col">
       <div className={cn(
-        'relative h-48 overflow-hidden flex items-center justify-center',
+        'relative h-48 overflow-hidden flex items-center justify-center shrink-0',
         contractor.logo ? (contractor.logoOnDark ? 'bg-charcoal-950 p-6' : 'bg-cream p-6') : 'bg-charcoal-900/5'
       )}>
         {contractor.logo ? (
@@ -46,8 +45,7 @@ export function ContractorCard({ contractor }: ContractorCardProps) {
           </div>
         )}
       </div>
-      <div className="p-5">
-        <StarRating rating={contractor.rating} reviewCount={contractor.reviewCount} className="mb-2" />
+      <div className="p-5 flex flex-col flex-1">
         <h3 className="text-lg font-bold font-[family-name:var(--font-jakarta)] text-charcoal-950 mb-1">
           {contractor.name}
         </h3>
@@ -66,9 +64,11 @@ export function ContractorCard({ contractor }: ContractorCardProps) {
             {contractor.phone}
           </p>
         )}
-        <Button variant="outline" size="sm" href={`/contractors/${contractor.slug}`} className="w-full">
-          Details
-        </Button>
+        <div className="mt-auto pt-4">
+          <Button variant="outline" size="sm" href={`/contractors/${contractor.slug}`} className="w-full">
+            Details
+          </Button>
+        </div>
       </div>
     </GlassCard>
   );
