@@ -139,6 +139,7 @@
     "badges": [],
     "image": "/images/workers-installing.png",
     "logo": "/images/contractors/california-erectors.svg",
+    "logoOnDark": true,
     "categories": ["Mass Timber"],
     "location": "California",
     "lat": 38.049,
