@@ -25,7 +25,7 @@ export function TeamPreview() {
           <GlassCard hover padding="lg" className="text-center max-w-xs">
             {tomBaun?.image ? (
               <div className="w-36 h-36 rounded-full mx-auto mb-4 overflow-hidden relative">
-                <Image src={tomBaun.image} alt="Tom Baun" fill className="object-cover" sizes="144px" />
+                <Image src={tomBaun.image} alt="Tom Baun" fill className="object-cover object-top" sizes="144px" />
               </div>
             ) : (
               <div className="w-36 h-36 rounded-full bg-gradient-to-br from-amber-400 to-forest-500 mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold font-[family-name:var(--font-jakarta)]">

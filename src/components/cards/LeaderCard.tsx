@@ -24,7 +24,7 @@ export function LeaderCard({ leader }: LeaderCardProps) {
               alt={leader.name}
               width={96}
               height={96}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
               onError={() => setImageError(true)}
             />
           ) : (
