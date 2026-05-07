@@ -22,8 +22,8 @@ const ROTATED_CW_IMAGES: string[] = [
 
 // Images needing counterclockwise rotation (-90deg)
 const ROTATED_CCW_IMAGES = [
-  'rotated-site-3',
-  // rotated-frame-1 was rotated in-file 90deg CW so it no longer needs the CSS hack
+  // rotated-site-1, rotated-site-2, rotated-site-3, rotated-frame-1 were
+  // rotated in-file so they no longer need the CSS hack
   'rotated-training',
   'rotated-projects',
 ];
