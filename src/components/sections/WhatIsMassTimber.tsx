@@ -47,7 +47,7 @@ export function WhatIsMassTimber() {
                   From an Ironworker&apos;s point of view, Mass Timber is not about finishes or interiors — it&apos;s about the structure. Each piece of Mass Timber is prefabricated, engineered, and installed as part of a load-bearing frame that carries the weight of the building.
                 </p>
                 <p>
-                  At its core, Mass Timber construction is structural assembly at scale. It requires the same engineering collaboration, load calculations, lift plans, and high-risk erection procedures that define Ironworker jurisdiction.
+                  At its core, Mass Timber construction is structural assembly at scale. It requires the same engineering collaboration, load calculations, lift plans, and high-risk erection procedures that ironworkers have done for decades and continue to do every single day on projects across North America.
                 </p>
                 <p className="font-semibold text-charcoal-950">
                   That&apos;s why Ironworkers across North America are leading the way in Mass Timber erection.
