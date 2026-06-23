@@ -44,7 +44,20 @@ export function Header() {
   const dropdownTimeoutRef = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    // Hysteresis: shrink when scrolling past 80, only expand again when back above 20.
+    // Without this dead-zone, shrinking the header reduces page height and snaps the
+    // scroll position back across the threshold, causing an infinite expand/shrink loop.
+    let isCompact = false;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (!isCompact && y > 80) {
+        isCompact = true;
+        setScrolled(true);
+      } else if (isCompact && y < 20) {
+        isCompact = false;
+        setScrolled(false);
+      }
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
