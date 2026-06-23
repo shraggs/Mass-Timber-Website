@@ -143,6 +143,9 @@ export function Footer() {
             <Link href="#" className="hover:text-amber-400 transition-colors">Privacy Policy</Link>
           </div>
         </div>
+        <div className="pt-4 text-center text-xs text-cream/30">
+          Website powered by <span className="text-cream/50 font-semibold">Northstar AI Solutions</span>
+        </div>
       </Container>
     </footer>
   );
