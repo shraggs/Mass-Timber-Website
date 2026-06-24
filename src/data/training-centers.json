@@ -75,5 +75,115 @@
     "phone": "(313) 292-2727",
     "courses": ["Mass Timber Fundamentals", "Welding Certification", "Reinforcing Systems"],
     "status": "Active"
+  },
+  {
+    "id": "9",
+    "name": "Ironworkers Local 118 Training Center",
+    "city": "Sacramento",
+    "state": "CA",
+    "region": "West",
+    "address": "3524 51st Ave., Sacramento, CA 95823",
+    "phone": "(916) 428-7420",
+    "courses": ["Mass Timber Fundamentals", "Ironworker Apprenticeship", "Safety Fundamentals"],
+    "status": "Active"
+  },
+  {
+    "id": "10",
+    "name": "Ironworkers Local 155 Training Center",
+    "city": "Fresno",
+    "state": "CA",
+    "region": "West",
+    "address": "1380 S. Channing Way, Fresno, CA 93706",
+    "phone": "(559) 497-1295",
+    "courses": ["Mass Timber Fundamentals", "Ironworker Apprenticeship", "Safety Fundamentals"],
+    "status": "Active"
+  },
+  {
+    "id": "11",
+    "name": "Ironworkers Local 229 Training Center",
+    "city": "San Diego",
+    "state": "CA",
+    "region": "West",
+    "address": "3888 Beech Street, San Diego, CA 92105",
+    "phone": "(858) 505-9414",
+    "courses": ["Mass Timber Fundamentals", "Ironworker Apprenticeship", "Safety Fundamentals"],
+    "status": "Active"
+  },
+  {
+    "id": "12",
+    "name": "Ironworkers Locals 377 / 378 Training Center",
+    "city": "Benicia",
+    "state": "CA",
+    "region": "West",
+    "address": "3150 Bayshore Road, Benicia, CA 94510",
+    "phone": "(707) 746-7666",
+    "courses": ["Mass Timber Fundamentals", "Ironworker Apprenticeship", "Safety Fundamentals"],
+    "status": "Active"
+  },
+  {
+    "id": "13",
+    "name": "Ironworkers Locals 416 / 433 — La Palma Training Center",
+    "city": "La Palma",
+    "state": "CA",
+    "region": "West",
+    "address": "5555 Fresca Drive, La Palma, CA 90623",
+    "phone": "(714) 228-9744",
+    "courses": ["Mass Timber Fundamentals", "Ironworker Apprenticeship", "Safety Fundamentals"],
+    "status": "Active"
+  },
+  {
+    "id": "14",
+    "name": "Ironworkers Locals 416 / 433 — Fontana Training Center",
+    "city": "Fontana",
+    "state": "CA",
+    "region": "West",
+    "address": "15488 Arrow Route, Fontana, CA 92335",
+    "phone": "(714) 228-9744",
+    "courses": ["Mass Timber Fundamentals", "Ironworker Apprenticeship", "Safety Fundamentals"],
+    "status": "Active"
+  },
+  {
+    "id": "15",
+    "name": "Ironworkers Local 118 — Reno Training Center",
+    "city": "Reno",
+    "state": "NV",
+    "region": "West",
+    "address": "14295 Mount Bismark, Reno, NV 89506",
+    "phone": "(775) 331-8696",
+    "courses": ["Mass Timber Fundamentals", "Ironworker Apprenticeship", "Safety Fundamentals"],
+    "status": "Active"
+  },
+  {
+    "id": "16",
+    "name": "Ironworkers Locals 416 / 433 — Henderson Training Center",
+    "city": "Henderson",
+    "state": "NV",
+    "region": "West",
+    "address": "960 Wigwam Pkwy, Henderson, NV 89014",
+    "phone": "(702) 643-7991",
+    "courses": ["Mass Timber Fundamentals", "Ironworker Apprenticeship", "Safety Fundamentals"],
+    "status": "Active"
+  },
+  {
+    "id": "17",
+    "name": "Ironworkers Local 75 — Phoenix Training Center",
+    "city": "Phoenix",
+    "state": "AZ",
+    "region": "West",
+    "address": "330 East Maricopa Freeway, Phoenix, AZ 85004",
+    "phone": "(602) 276-6055",
+    "courses": ["Mass Timber Fundamentals", "Ironworker Apprenticeship", "Safety Fundamentals"],
+    "status": "Active"
+  },
+  {
+    "id": "18",
+    "name": "Ironworkers Local 75 — Tucson Training Center",
+    "city": "Tucson",
+    "state": "AZ",
+    "region": "West",
+    "address": "1910 North 15th Ave, Tucson, AZ 85705",
+    "phone": "(520) 624-5553",
+    "courses": ["Mass Timber Fundamentals", "Ironworker Apprenticeship", "Safety Fundamentals"],
+    "status": "Active"
   }
 ]
