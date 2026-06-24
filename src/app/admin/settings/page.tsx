@@ -20,7 +20,7 @@ interface SiteSettings {
 const defaultSettings: SiteSettings = {
   SITE_NAME: 'IW Mass Timber',
   SITE_TAGLINE: 'Expert Fabrication for Mass Timber Construction. Built on Ironworker Precision.',
-  CONTACT_EMAIL: 'info@iwmasstimber.com',
+  CONTACT_EMAIL: 'tb.3tree@gmail.com',
   CONTACT_PHONE: '(202) 383-4800',
   CONTACT_PHONE_SECONDARY: '(800) 555-1212',
   BUSINESS_HOURS: 'Monday - Friday: 7 AM – 6 PM',

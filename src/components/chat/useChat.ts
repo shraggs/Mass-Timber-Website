@@ -80,7 +80,7 @@ export function useChat() {
           {
             id: `error-${Date.now()}`,
             role: 'assistant',
-            content: 'Sorry, I encountered an error. Please try again or contact info@iwmasstimber.com for assistance.',
+            content: 'Sorry, I encountered an error. Please try again or contact Tom Baun at tb.3tree@gmail.com for assistance.',
           },
         ]);
       } finally {
