@@ -10,7 +10,7 @@ const contactCards = [
     name: 'Tom Baun',
     title: 'Mass Timber Director',
     phone: '(509) 675-0377',
-    email: 'tb3tree@gmail.com',
+    email: 'tb.3tree@gmail.com',
     image: '/images/leadership/tom-baun.jpeg',
   },
   {
